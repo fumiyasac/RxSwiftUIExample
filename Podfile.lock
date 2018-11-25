@@ -1,0 +1,40 @@
+PODS:
+  - AnimatedCollectionViewLayout (0.4.0)
+  - DeckTransition (2.1.0)
+  - FontAwesome.swift (1.4.6)
+  - Nuke (7.5.1)
+  - RxAtomic (4.4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - AnimatedCollectionViewLayout
+  - DeckTransition (~> 2.0)
+  - FontAwesome.swift
+  - Nuke
+  - RxSwift
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AnimatedCollectionViewLayout
+    - DeckTransition
+    - FontAwesome.swift
+    - Nuke
+    - RxAtomic
+    - RxSwift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  AnimatedCollectionViewLayout: f0295119f94d8492fc6ac39e2ced64a471b12699
+  DeckTransition: ca707456e3d83928c895fed6f458cbf68c5cac84
+  FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
+  Nuke: 3814db501e55f17951451839c726ffd91641e9a5
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: 9cd4a9dbcc83829235550e5dff83e4206e0764f5
+
+COCOAPODS: 1.5.3

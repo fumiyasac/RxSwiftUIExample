@@ -1,0 +1,6 @@
+framework module Pods_RxSwiftUIExample {
+  umbrella header "Pods-RxSwiftUIExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
