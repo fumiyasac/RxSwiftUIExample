@@ -9,7 +9,7 @@ target 'RxSwiftUIExample' do
   pod 'RxSwift'
 
   pod 'Nuke'
-  pod 'SwiftyJSON'
+  pod 'APIKit'
 
   pod 'DeckTransition', '~> 2.0'
   pod 'AnimatedCollectionViewLayout'

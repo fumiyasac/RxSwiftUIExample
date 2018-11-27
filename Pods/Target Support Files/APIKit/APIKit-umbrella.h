@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "APIKit.h"
 
-FOUNDATION_EXPORT double SwiftyJSONVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftyJSONVersionString[];
+FOUNDATION_EXPORT double APIKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char APIKitVersionString[];
 
