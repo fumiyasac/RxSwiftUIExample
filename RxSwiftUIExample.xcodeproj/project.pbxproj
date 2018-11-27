@@ -121,12 +121,16 @@
 		DE2553B621AADA1A00D9A3C7 /* RxSwiftUIExample */ = {
 			isa = PBXGroup;
 			children = (
-				DE2553B721AADA1A00D9A3C7 /* AppDelegate.swift */,
-				DE2553B921AADA1A00D9A3C7 /* ViewController.swift */,
-				DE2553BB21AADA1A00D9A3C7 /* Main.storyboard */,
-				DE2553BE21AADA1E00D9A3C7 /* Assets.xcassets */,
-				DE2553C021AADA1E00D9A3C7 /* LaunchScreen.storyboard */,
 				DE2553C321AADA1E00D9A3C7 /* Info.plist */,
+				DE2553B721AADA1A00D9A3C7 /* AppDelegate.swift */,
+				DE2553BE21AADA1E00D9A3C7 /* Assets.xcassets */,
+				DE2553EA21AD58BF00D9A3C7 /* Extension */,
+				DE2553E921AD58AB00D9A3C7 /* Model */,
+				DE2553EB21AD58C800D9A3C7 /* Module */,
+				DE2553E621AD586D00D9A3C7 /* Storyboard */,
+				DE2553E721AD589B00D9A3C7 /* View */,
+				DE2553E521AD585700D9A3C7 /* ViewController */,
+				DE2553E821AD58A400D9A3C7 /* ViewModel */,
 			);
 			path = RxSwiftUIExample;
 			sourceTree = "<group>";
@@ -147,6 +151,58 @@
 				DE2553D921AADA1E00D9A3C7 /* Info.plist */,
 			);
 			path = RxSwiftUIExampleUITests;
+			sourceTree = "<group>";
+		};
+		DE2553E521AD585700D9A3C7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DE2553B921AADA1A00D9A3C7 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DE2553E621AD586D00D9A3C7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DE2553C021AADA1E00D9A3C7 /* LaunchScreen.storyboard */,
+				DE2553BB21AADA1A00D9A3C7 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DE2553E721AD589B00D9A3C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE2553E821AD58A400D9A3C7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DE2553E921AD58AB00D9A3C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE2553EA21AD58BF00D9A3C7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DE2553EB21AD58C800D9A3C7 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,7 +571,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -531,7 +590,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -547,7 +609,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -564,7 +630,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -580,7 +650,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -596,7 +670,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
