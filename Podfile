@@ -9,7 +9,6 @@ target 'RxSwiftUIExample' do
   pod 'RxSwift'
 
   # Utility
-  pod 'Nuke'
   pod 'APIKit'
 
   # UI

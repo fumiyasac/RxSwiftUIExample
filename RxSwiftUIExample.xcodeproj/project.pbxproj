@@ -19,6 +19,9 @@
 		DE19694121ADC829008D183C /* SearchNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19693F21ADC829008D183C /* SearchNewsTableViewCell.swift */; };
 		DE19694221ADC829008D183C /* SearchNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE19694021ADC829008D183C /* SearchNewsTableViewCell.xib */; };
 		DE19694421AE53A7008D183C /* NewsDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19694321AE53A7008D183C /* NewsDateFormatter.swift */; };
+		DE19694921AE6E78008D183C /* MenuButtonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19694821AE6E78008D183C /* MenuButtonTypes.swift */; };
+		DE19694B21AE8CCA008D183C /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19694A21AE8CCA008D183C /* FeaturedViewController.swift */; };
+		DE19694D21AE8D81008D183C /* RecentNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19694C21AE8D81008D183C /* RecentNewsViewController.swift */; };
 		DE2553B821AADA1A00D9A3C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553B721AADA1A00D9A3C7 /* AppDelegate.swift */; };
 		DE2553BA21AADA1A00D9A3C7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553B921AADA1A00D9A3C7 /* MainViewController.swift */; };
 		DE2553BD21AADA1A00D9A3C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2553BB21AADA1A00D9A3C7 /* Main.storyboard */; };
@@ -26,8 +29,6 @@
 		DE2553C221AADA1E00D9A3C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2553C021AADA1E00D9A3C7 /* LaunchScreen.storyboard */; };
 		DE2553CD21AADA1E00D9A3C7 /* RxSwiftUIExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553CC21AADA1E00D9A3C7 /* RxSwiftUIExampleTests.swift */; };
 		DE2553D821AADA1E00D9A3C7 /* RxSwiftUIExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553D721AADA1E00D9A3C7 /* RxSwiftUIExampleUITests.swift */; };
-		DE2553EE21ADA75800D9A3C7 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2553EC21ADA75800D9A3C7 /* Initial.storyboard */; };
-		DE2553F021ADA79900D9A3C7 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553EF21ADA79900D9A3C7 /* InitialViewController.swift */; };
 		DE2553F221ADA7F600D9A3C7 /* NSObjectProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553F121ADA7F600D9A3C7 /* NSObjectProtocolExtension.swift */; };
 		DE2553F421ADA89D00D9A3C7 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553F321ADA89D00D9A3C7 /* UITableViewExtension.swift */; };
 		DE2553F621ADA93200D9A3C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553F521ADA93200D9A3C7 /* UIColorExtension.swift */; };
@@ -66,6 +67,9 @@
 		DE19693F21ADC829008D183C /* SearchNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsTableViewCell.swift; sourceTree = "<group>"; };
 		DE19694021ADC829008D183C /* SearchNewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNewsTableViewCell.xib; sourceTree = "<group>"; };
 		DE19694321AE53A7008D183C /* NewsDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDateFormatter.swift; sourceTree = "<group>"; };
+		DE19694821AE6E78008D183C /* MenuButtonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonTypes.swift; sourceTree = "<group>"; };
+		DE19694A21AE8CCA008D183C /* FeaturedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
+		DE19694C21AE8D81008D183C /* RecentNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNewsViewController.swift; sourceTree = "<group>"; };
 		DE2553B421AADA1A00D9A3C7 /* RxSwiftUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2553B721AADA1A00D9A3C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE2553B921AADA1A00D9A3C7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -79,8 +83,6 @@
 		DE2553D321AADA1E00D9A3C7 /* RxSwiftUIExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftUIExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2553D721AADA1E00D9A3C7 /* RxSwiftUIExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftUIExampleUITests.swift; sourceTree = "<group>"; };
 		DE2553D921AADA1E00D9A3C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE2553ED21ADA75800D9A3C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Initial.storyboard; sourceTree = "<group>"; };
-		DE2553EF21ADA79900D9A3C7 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		DE2553F121ADA7F600D9A3C7 /* NSObjectProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocolExtension.swift; sourceTree = "<group>"; };
 		DE2553F321ADA89D00D9A3C7 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		DE2553F521ADA93200D9A3C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -157,6 +159,32 @@
 			path = SearchNewsTableViewCell;
 			sourceTree = "<group>";
 		};
+		DE19694521AE59C9008D183C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE19694621AE59D5008D183C /* Container */,
+				DE2553B921AADA1A00D9A3C7 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE19694621AE59D5008D183C /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				DE19694A21AE8CCA008D183C /* FeaturedViewController.swift */,
+				DE19694C21AE8D81008D183C /* RecentNewsViewController.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		DE19694721AE6E5C008D183C /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				DE19694821AE6E78008D183C /* MenuButtonTypes.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		DE2553AB21AADA1A00D9A3C7 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +213,7 @@
 				DE2553C321AADA1E00D9A3C7 /* Info.plist */,
 				DE2553B721AADA1A00D9A3C7 /* AppDelegate.swift */,
 				DE2553BE21AADA1E00D9A3C7 /* Assets.xcassets */,
+				DE19694721AE6E5C008D183C /* Enum */,
 				DE2553EA21AD58BF00D9A3C7 /* Extension */,
 				DE2553E921AD58AB00D9A3C7 /* Model */,
 				DE2553EB21AD58C800D9A3C7 /* Module */,
@@ -217,8 +246,7 @@
 		DE2553E521AD585700D9A3C7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DE2553EF21ADA79900D9A3C7 /* InitialViewController.swift */,
-				DE2553B921AADA1A00D9A3C7 /* MainViewController.swift */,
+				DE19694521AE59C9008D183C /* Main */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -226,7 +254,6 @@
 		DE2553E621AD586D00D9A3C7 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				DE2553EC21ADA75800D9A3C7 /* Initial.storyboard */,
 				DE2553C021AADA1E00D9A3C7 /* LaunchScreen.storyboard */,
 				DE2553BB21AADA1A00D9A3C7 /* Main.storyboard */,
 			);
@@ -392,7 +419,6 @@
 				DE19694221ADC829008D183C /* SearchNewsTableViewCell.xib in Resources */,
 				DE19693E21ADC817008D183C /* RecentNewsTableViewCell.xib in Resources */,
 				DE2553BD21AADA1A00D9A3C7 /* Main.storyboard in Resources */,
-				DE2553EE21ADA75800D9A3C7 /* Initial.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +470,6 @@
 				"${BUILT_PRODUCTS_DIR}/EasyTransitions/EasyTransitions.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -457,7 +482,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTransitions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -475,9 +499,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE19693D21ADC817008D183C /* RecentNewsTableViewCell.swift in Sources */,
+				DE19694D21AE8D81008D183C /* RecentNewsViewController.swift in Sources */,
 				DE19693121ADBAA4008D183C /* CustomViewBase.swift in Sources */,
 				DE19692D21ADB1FE008D183C /* AppConstant.swift in Sources */,
-				DE2553F021ADA79900D9A3C7 /* InitialViewController.swift in Sources */,
 				DE19692F21ADB400008D183C /* UIViewControllerExtension.swift in Sources */,
 				DE2553F421ADA89D00D9A3C7 /* UITableViewExtension.swift in Sources */,
 				DE19694121ADC829008D183C /* SearchNewsTableViewCell.swift in Sources */,
@@ -486,6 +510,8 @@
 				DE2553F221ADA7F600D9A3C7 /* NSObjectProtocolExtension.swift in Sources */,
 				DE19693521ADBB35008D183C /* FeaturedCollectionViewCell.swift in Sources */,
 				DE2553BA21AADA1A00D9A3C7 /* MainViewController.swift in Sources */,
+				DE19694921AE6E78008D183C /* MenuButtonTypes.swift in Sources */,
+				DE19694B21AE8CCA008D183C /* FeaturedViewController.swift in Sources */,
 				DE2553B821AADA1A00D9A3C7 /* AppDelegate.swift in Sources */,
 				DE2553F621ADA93200D9A3C7 /* UIColorExtension.swift in Sources */,
 				DE19694421AE53A7008D183C /* NewsDateFormatter.swift in Sources */,
@@ -538,14 +564,6 @@
 				DE2553C121AADA1E00D9A3C7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		DE2553EC21ADA75800D9A3C7 /* Initial.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE2553ED21ADA75800D9A3C7 /* Base */,
-			);
-			name = Initial.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -675,10 +693,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -694,10 +709,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -713,11 +725,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -734,11 +742,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -754,11 +758,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -774,11 +774,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

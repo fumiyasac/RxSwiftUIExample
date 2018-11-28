@@ -10,8 +10,11 @@ import UIKit
 
 class FeaturedCollectionViewCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    static let cellSize: CGSize = {
+        let cellWidth = UIScreen.main.bounds.width
+        let cellHeight = CGFloat(180.0)
+        return CGSize(width: cellWidth, height: cellHeight)
+    }()
 
+    // MARK: - Function
 }

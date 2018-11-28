@@ -12,12 +12,11 @@ import UIKit
 struct AppConstant {
 
     // アプリ共通の設定
-    static let COMMON_FONT_NORMAL: String = "HiraKakuProN-W3"
-    static let COMMON_FONT_BOLD: String = "HiraKakuProN-W6"
+    static let COMMON_FONT_NORMAL: String = "Helvetica"
+    static let COMMON_FONT_BOLD: String = "Helvetica-Bold"
+    static let COMMON_POINT_COLOR: UIColor = UIColor(code: "#28385e")
 
     // ナビゲーションバーの設定
-    static let COMMON_NAVIGATION_BAR_BACKGROUND_COLOR: UIColor = UIColor(code: "#28385e")
-    static let COMMON_NAVIGATION_BAR_TINT_COLOR: UIColor = .white
     static let COMMON_NAVIGATION_FONT_SIZE: CGFloat = 14.0
 
     // 検索バーの設定

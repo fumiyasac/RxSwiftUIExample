@@ -21,8 +21,6 @@ extension UIViewController {
         attributes[NSAttributedString.Key.foregroundColor] = UIColor.white
 
         // NavigationBarの調整をする
-        self.navigationController!.navigationBar.backgroundColor = AppConstant.COMMON_NAVIGATION_BAR_BACKGROUND_COLOR
-        self.navigationController!.navigationBar.tintColor = AppConstant.COMMON_NAVIGATION_BAR_TINT_COLOR
         self.navigationController!.navigationBar.titleTextAttributes = attributes
 
         // タイトルを表示する
@@ -33,7 +31,6 @@ extension UIViewController {
     // MEMO: NavigationControllerのrootとなるViewControllerへ設定する
     func removeBackButtonText() {
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.navigationController!.navigationBar.tintColor = AppConstant.COMMON_NAVIGATION_BAR_TINT_COLOR
         self.navigationItem.backBarButtonItem = backButtonItem
     }
 }

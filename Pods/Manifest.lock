@@ -6,7 +6,6 @@ PODS:
   - EasyTransitions (0.5.4)
   - Floaty (4.1.0)
   - FontAwesome.swift (1.4.6)
-  - Nuke (7.5.1)
   - Result (4.0.0)
   - RxAtomic (4.4.0)
   - RxSwift (4.4.0):
@@ -19,7 +18,6 @@ DEPENDENCIES:
   - EasyTransitions
   - Floaty
   - FontAwesome.swift
-  - Nuke
   - RxSwift
 
 SPEC REPOS:
@@ -30,7 +28,6 @@ SPEC REPOS:
     - EasyTransitions
     - Floaty
     - FontAwesome.swift
-    - Nuke
     - Result
     - RxAtomic
     - RxSwift
@@ -42,11 +39,10 @@ SPEC CHECKSUMS:
   EasyTransitions: 843a3e93b4cac14315e5d997b762bd1d214beb9c
   Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
   FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
-  Nuke: 3814db501e55f17951451839c726ffd91641e9a5
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: 556f3dee292e3da968ebc308d699ff12c79ebb6e
+PODFILE CHECKSUM: d5791166a970c9c16c57cb59196cef21b816f8c6
 
 COCOAPODS: 1.5.3
