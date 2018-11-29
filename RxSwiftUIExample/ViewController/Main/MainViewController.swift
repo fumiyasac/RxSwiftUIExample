@@ -62,8 +62,11 @@ class MainViewController: UIViewController {
             let item = FloatyItem()
 
             // ボタンアイテムのタップ時挙動を設定する
-            item.handler = { targetItem in
-                print("該当Storyboard名:", menuButtonCase.getStoryboardName())
+            item.handler = { _ in
+                let sb = UIStoryboard(name: menuButtonCase.getStoryboardName(), bundle: nil)
+                if let vc = sb.instantiateInitialViewController() {
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
 
             // ボタンアイテムのデザインを設定する

@@ -32,5 +32,6 @@ extension UIViewController {
     func removeBackButtonText() {
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButtonItem
+        self.navigationController!.navigationBar.tintColor = .white
     }
 }
