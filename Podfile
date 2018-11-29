@@ -17,4 +17,7 @@ target 'RxSwiftUIExample' do
   pod 'DeckTransition', '~> 2.0'
   pod 'AnimatedCollectionViewLayout'
   pod 'FontAwesome.swift'
+  pod 'YNDropDownMenu'
+  pod 'Toast-Swift', '~> 4.0.0'
+  pod "ESPullToRefresh"
 end

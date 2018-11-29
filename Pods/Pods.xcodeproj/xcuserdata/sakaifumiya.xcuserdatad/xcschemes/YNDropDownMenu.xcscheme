@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "61AC1897C7C209145310710C15202546"
-               BlueprintName = "RxAtomic"
+               BlueprintIdentifier = "EBC8F4D420E8FCC51F151EFEE855087E"
+               BlueprintName = "YNDropDownMenu"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "RxAtomic.framework">
+               BuildableName = "YNDropDownMenu.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
