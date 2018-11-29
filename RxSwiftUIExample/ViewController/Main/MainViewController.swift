@@ -54,6 +54,7 @@ class MainViewController: UIViewController {
         floatyMenuButton.buttonColor = AppConstant.COMMON_POINT_COLOR
         floatyMenuButton.plusColor = .white
         floatyMenuButton.overlayColor = UIColor.black.withAlphaComponent(0.67)
+        floatyMenuButton.sticky = true
 
         // MenuButtonTypesの定義からボタンアイテムを配置する
         let _ = MenuButtonTypes.allCases.map {

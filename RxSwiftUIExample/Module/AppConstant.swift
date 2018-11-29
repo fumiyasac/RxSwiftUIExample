@@ -20,9 +20,10 @@ struct AppConstant {
     static let COMMON_NAVIGATION_FONT_SIZE: CGFloat = 14.0
 
     // 検索バーの設定
-    static let SEARCHBAR_TEXT_FIELD_BACKGROUND_COLOR: UIColor = .white
-    static let SEARCHBAR_TEXT_FIELD_TINT_COLOR: UIColor = .gray
-    static let SEARCHBAR_TEXT_FIELD_FONT_SIZE: CGFloat = 13.0
-    static let SEARCHBAR_TEXT_FIELD_PLACEHOLDER_COLOR: UIColor = UIColor(code: "#bebebe")
+    static let SEARCHBAR_TEXTFIELD_BACKGROUND_COLOR: UIColor = .white
+    static let SEARCHBAR_TEXTFIELD_TINT_COLOR: UIColor = UIColor(code: "#666666")
+    static let SEARCHBAR_TEXTFIELD_FONT_SIZE: CGFloat = 13.0
+    static let SEARCHBAR_PLACEHOLDER_TINT_COLOR: UIColor = .lightGray
+    static let SEARCHBAR_PLACEHOLDER_FONT_SIZE: CGFloat = 13.0
 }
 

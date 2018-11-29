@@ -33,6 +33,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5CQ-3a-tKe"/>
                     </view>
+                    <connections>
+                        <outlet property="searchTableView" destination="udv-do-0eX" id="m2L-hi-wtG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc2-51-6LI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

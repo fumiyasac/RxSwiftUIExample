@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DC4D018F07571565405C049B /* Pods_RxSwiftUIExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4D97BD306639C8B22BEC5D /* Pods_RxSwiftUIExample.framework */; };
-		DE19692B21ADB0FE008D183C /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19692A21ADB0FE008D183C /* UISearchBarExtension.swift */; };
 		DE19692D21ADB1FE008D183C /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19692C21ADB1FE008D183C /* AppConstant.swift */; };
 		DE19692F21ADB400008D183C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19692E21ADB400008D183C /* UIViewControllerExtension.swift */; };
 		DE19693121ADBAA4008D183C /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19693021ADBAA4008D183C /* CustomViewBase.swift */; };
@@ -38,6 +37,7 @@
 		DEFFDEE921AFFFA600821D39 /* Information.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEFFDEE721AFFFA600821D39 /* Information.storyboard */; };
 		DEFFDEEB21AFFFD300821D39 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFDEEA21AFFFD300821D39 /* InformationViewController.swift */; };
 		DEFFDEED21AFFFE700821D39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFDEEC21AFFFE700821D39 /* SearchViewController.swift */; };
+		DEFFDEF021B04A0400821D39 /* KeywordSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFDEEF21B04A0400821D39 /* KeywordSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,6 @@
 		42436920B6730741EAACCE15 /* Pods-RxSwiftUIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftUIExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftUIExample/Pods-RxSwiftUIExample.debug.xcconfig"; sourceTree = "<group>"; };
 		7E4D97BD306639C8B22BEC5D /* Pods_RxSwiftUIExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftUIExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C0A0936A8DBAD9CA43F14C /* Pods-RxSwiftUIExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftUIExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftUIExample/Pods-RxSwiftUIExample.release.xcconfig"; sourceTree = "<group>"; };
-		DE19692A21ADB0FE008D183C /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
 		DE19692C21ADB1FE008D183C /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		DE19692E21ADB400008D183C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DE19693021ADBAA4008D183C /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		DEFFDEE821AFFFA600821D39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Information.storyboard; sourceTree = "<group>"; };
 		DEFFDEEA21AFFFD300821D39 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		DEFFDEEC21AFFFE700821D39 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DEFFDEEF21B04A0400821D39 /* KeywordSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordSearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +288,7 @@
 			children = (
 				DE19693021ADBAA4008D183C /* CustomViewBase.swift */,
 				DE19693221ADBB09008D183C /* FeaturedCollectionViewCell */,
+				DEFFDEEE21B049CC00821D39 /* KeywordSearchBar */,
 				DE19693721ADBB45008D183C /* RecentNewsTableViewCell */,
 				DE19693821ADC60C008D183C /* SearchNewsTableViewCell */,
 			);
@@ -314,7 +315,6 @@
 				DE2553F121ADA7F600D9A3C7 /* NSObjectProtocolExtension.swift */,
 				DE2553F721ADA97800D9A3C7 /* UICollectionViewExtension.swift */,
 				DE2553F521ADA93200D9A3C7 /* UIColorExtension.swift */,
-				DE19692A21ADB0FE008D183C /* UISearchBarExtension.swift */,
 				DE2553F321ADA89D00D9A3C7 /* UITableViewExtension.swift */,
 				DE19692E21ADB400008D183C /* UIViewControllerExtension.swift */,
 			);
@@ -328,6 +328,14 @@
 				DE19694321AE53A7008D183C /* NewsDateFormatter.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		DEFFDEEE21B049CC00821D39 /* KeywordSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				DEFFDEEF21B04A0400821D39 /* KeywordSearchBar.swift */,
+			);
+			path = KeywordSearchBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,13 +546,13 @@
 				DE2553F421ADA89D00D9A3C7 /* UITableViewExtension.swift in Sources */,
 				DE19694121ADC829008D183C /* SearchNewsTableViewCell.swift in Sources */,
 				DE2553F821ADA97800D9A3C7 /* UICollectionViewExtension.swift in Sources */,
-				DE19692B21ADB0FE008D183C /* UISearchBarExtension.swift in Sources */,
 				DEFFDEED21AFFFE700821D39 /* SearchViewController.swift in Sources */,
 				DE2553F221ADA7F600D9A3C7 /* NSObjectProtocolExtension.swift in Sources */,
 				DE19693521ADBB35008D183C /* FeaturedCollectionViewCell.swift in Sources */,
 				DE19695221AF0473008D183C /* NewYorkTimesAPI.swift in Sources */,
 				DE2553BA21AADA1A00D9A3C7 /* MainViewController.swift in Sources */,
 				DE19694921AE6E78008D183C /* MenuButtonTypes.swift in Sources */,
+				DEFFDEF021B04A0400821D39 /* KeywordSearchBar.swift in Sources */,
 				DE19694B21AE8CCA008D183C /* FeaturedViewController.swift in Sources */,
 				DE2553B821AADA1A00D9A3C7 /* AppDelegate.swift in Sources */,
 				DE2553F621ADA93200D9A3C7 /* UIColorExtension.swift in Sources */,
@@ -743,7 +751,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -759,7 +770,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -775,7 +789,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -792,7 +810,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -808,7 +830,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -824,7 +850,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = RxSwiftUIExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.RxSwiftUIExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
