@@ -37,7 +37,7 @@ class FeaturedViewController: UIViewController {
 
         // UICollectionViewに付与するアニメーションに関する設定
         let layout = AnimatedCollectionViewLayout()
-        layout.animator = RotateInOutAttributesAnimator()
+        layout.animator = CubeAttributesAnimator()
         layout.scrollDirection = .horizontal
         featuredCollectionView.collectionViewLayout = layout
     }
