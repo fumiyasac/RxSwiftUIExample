@@ -138,6 +138,7 @@
                     <navigationItem key="navigationItem" id="rpE-Hc-CnV"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="addNewsButton" destination="gW1-tc-5a7" id="soH-4z-qIT"/>
                         <outlet property="floatyMenuButton" destination="9Uo-Li-Fe0" id="oM3-s6-rGT"/>
                         <outlet property="mainScrollView" destination="LHz-pt-1ob" id="WKZ-cr-uGH"/>
                     </connections>

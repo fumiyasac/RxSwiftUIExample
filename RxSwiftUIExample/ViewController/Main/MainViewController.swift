@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var floatyMenuButton: Floaty!
+    @IBOutlet weak private var addNewsButton: UIButton!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -78,20 +79,22 @@ class MainViewController: UIViewController {
     }
 
     private func decorarteFloatyMenuButton(item: FloatyItem, type: MenuButtonTypes) {
+
+        // アイコンの配置位置とサイズを設定する
         let itemOrigin = CGPoint(x: 7.0, y: 7.0)
         let itemSize = CGSize(width: 28.0, height: 28.0)
 
-        // タイトル文字列設定
+        // タイトル文字列を設定する
         item.title = type.getButtonName()
 
-        // ボタンの色設定
+        // ボタンの色を設定する
         item.buttonColor = UIColor(code: "#333333", alpha: 0.5)
 
-        // 表示ラベルのフォント設定
+        // 表示ラベルのフォントを設定する
         item.titleLabel.textAlignment = .right
         item.titleLabel.font = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_NAVIGATION_FONT_SIZE)
 
-        // ボタン右のアイコン表示設定
+        // ボタン右のアイコン表示を設定する
         item.iconImageView.tintColor = .white
         item.iconImageView.frame = CGRect(origin: itemOrigin, size: itemSize)
         item.iconImageView.image = UIImage.fontAwesomeIcon(name: type.getFontAwesomeIcon(), style: .solid, textColor: .white, size: itemSize)
