@@ -19,5 +19,5 @@ target 'RxSwiftUIExample' do
   pod 'FontAwesome.swift'
   pod 'YNDropDownMenu'
   pod 'Toast-Swift', '~> 4.0.0'
-  pod "ESPullToRefresh"
+  pod 'ESPullToRefresh', :git => 'https://github.com/eggswift/pull-to-refresh', :branch => 'master'
 end

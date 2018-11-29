@@ -4,7 +4,7 @@ PODS:
     - Result (~> 4.0)
   - DeckTransition (2.1.0)
   - EasyTransitions (0.5.4)
-  - ESPullToRefresh (2.7)
+  - ESPullToRefresh (2.8)
   - Floaty (4.1.0)
   - FontAwesome.swift (1.4.6)
   - Result (4.0.0)
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - APIKit
   - DeckTransition (~> 2.0)
   - EasyTransitions
-  - ESPullToRefresh
+  - ESPullToRefresh (from `https://github.com/eggswift/pull-to-refresh`, branch `master`)
   - Floaty
   - FontAwesome.swift
   - RxSwift
@@ -32,7 +32,6 @@ SPEC REPOS:
     - APIKit
     - DeckTransition
     - EasyTransitions
-    - ESPullToRefresh
     - Floaty
     - FontAwesome.swift
     - Result
@@ -41,12 +40,22 @@ SPEC REPOS:
     - Toast-Swift
     - YNDropDownMenu
 
+EXTERNAL SOURCES:
+  ESPullToRefresh:
+    :branch: master
+    :git: https://github.com/eggswift/pull-to-refresh
+
+CHECKOUT OPTIONS:
+  ESPullToRefresh:
+    :commit: f6bc99ccd8f7bf24a9eb6c79ede8ef876119f7fe
+    :git: https://github.com/eggswift/pull-to-refresh
+
 SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: f0295119f94d8492fc6ac39e2ced64a471b12699
   APIKit: 23ddce4be7eccd746d2ab3c62713cd80d5846d5a
   DeckTransition: ca707456e3d83928c895fed6f458cbf68c5cac84
   EasyTransitions: 843a3e93b4cac14315e5d997b762bd1d214beb9c
-  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
+  ESPullToRefresh: 441449eca0618977890516b5665775f705e70c4d
   Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
   FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
@@ -55,6 +64,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
   YNDropDownMenu: ba608568d4ac0a37385142f723da8cfc29c7ff11
 
-PODFILE CHECKSUM: c0cee696b905c1fcf3d0a87e8c576b94753c3d3f
+PODFILE CHECKSUM: 4a3fc63f9e2b49b279af68bb2863c1b09c6ab4b8
 
 COCOAPODS: 1.5.3
