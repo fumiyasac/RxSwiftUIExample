@@ -41,6 +41,10 @@
                 <constraint firstItem="Zfn-qh-l5B" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ufi-GM-hVU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="thumbnailImageView" destination="Zfn-qh-l5B" id="EUw-bj-ccn"/>
+                <outlet property="titleLabel" destination="gCg-Jn-pKJ" id="G63-eZ-NnS"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="153.82308845577214"/>
         </collectionViewCell>
     </objects>

@@ -12,7 +12,23 @@ class RecentNewsTableViewCell: UITableViewCell {
 
     static let cellHeight: CGFloat = 70.0
 
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var byLineLabel: UILabel!
+    @IBOutlet weak private var iconImageView: UIImageView!
+
+    // MARK: - Initializer
+
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        setupRecentNewsTableViewCell()
+    }
+
+    // MARK: - Private Function
+
+    private func setupRecentNewsTableViewCell() {
+        self.accessoryType = .none
+        self.selectionStyle = .none
     }
 }

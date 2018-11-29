@@ -79,10 +79,23 @@
                                                     <segue destination="B5a-Ez-L2Z" kind="embed" id="xjs-K6-Gat"/>
                                                 </connections>
                                             </containerView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-Ng-5Jf" customClass="AddRecentNewsButtonView" customModule="RxSwiftUIExample" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-Ng-5Jf">
                                                 <rect key="frame" x="0.0" y="992" width="375" height="48"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW1-tc-5a7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                                        <state key="normal" title="↓ More Next 10 News">
+                                                            <color key="titleColor" red="0.15686274510000001" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="gW1-tc-5a7" firstAttribute="leading" secondItem="cBd-Ng-5Jf" secondAttribute="leading" id="DIg-jU-5J4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gW1-tc-5a7" secondAttribute="bottom" id="Fld-1N-9BZ"/>
+                                                    <constraint firstItem="gW1-tc-5a7" firstAttribute="top" secondItem="cBd-Ng-5Jf" secondAttribute="top" id="RpY-tM-Gz7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gW1-tc-5a7" secondAttribute="trailing" id="UcN-he-XbX"/>
                                                     <constraint firstAttribute="height" constant="48" id="mnT-d0-bKw"/>
                                                 </constraints>
                                             </view>

@@ -10,15 +10,19 @@ import UIKit
 
 class SearchNewsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var digestLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        setupSearchNewsTableViewCell()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    // MARK: - Private Function
 
-        // Configure the view for the selected state
+    private func setupSearchNewsTableViewCell() {
+        self.accessoryType = .none
+        self.selectionStyle = .none
     }
-    
 }

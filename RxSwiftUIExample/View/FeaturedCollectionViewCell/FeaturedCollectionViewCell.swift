@@ -16,5 +16,8 @@ class FeaturedCollectionViewCell: UICollectionViewCell {
         return CGSize(width: cellWidth, height: cellHeight)
     }()
 
+    @IBOutlet weak private var thumbnailImageView: UIImageView!
+    @IBOutlet weak private var titleLabel: UILabel!
+
     // MARK: - Function
 }
