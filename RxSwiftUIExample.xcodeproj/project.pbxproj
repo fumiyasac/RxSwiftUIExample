@@ -34,6 +34,8 @@
 		DE2553F421ADA89D00D9A3C7 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553F321ADA89D00D9A3C7 /* UITableViewExtension.swift */; };
 		DE2553F621ADA93200D9A3C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553F521ADA93200D9A3C7 /* UIColorExtension.swift */; };
 		DE2553F821ADA97800D9A3C7 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2553F721ADA97800D9A3C7 /* UICollectionViewExtension.swift */; };
+		DEFFDEE021AFD91200821D39 /* AddRecentNewsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFDEDF21AFD91200821D39 /* AddRecentNewsButtonView.swift */; };
+		DEFFDEE221AFD96B00821D39 /* AddRecentNewsButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFFDEE121AFD96B00821D39 /* AddRecentNewsButtonView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		DE2553F321ADA89D00D9A3C7 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		DE2553F521ADA93200D9A3C7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE2553F721ADA97800D9A3C7 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		DEFFDEDF21AFD91200821D39 /* AddRecentNewsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecentNewsButtonView.swift; sourceTree = "<group>"; };
+		DEFFDEE121AFD96B00821D39 /* AddRecentNewsButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRecentNewsButtonView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				DE19693021ADBAA4008D183C /* CustomViewBase.swift */,
+				DEFFDEDE21AFD89A00821D39 /* AddRecentNewsButtonView */,
 				DE19693221ADBB09008D183C /* FeaturedCollectionViewCell */,
 				DE19693721ADBB45008D183C /* RecentNewsTableViewCell */,
 				DE19693821ADC60C008D183C /* SearchNewsTableViewCell */,
@@ -316,6 +321,15 @@
 				DE19694321AE53A7008D183C /* NewsDateFormatter.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		DEFFDEDE21AFD89A00821D39 /* AddRecentNewsButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				DEFFDEDF21AFD91200821D39 /* AddRecentNewsButtonView.swift */,
+				DEFFDEE121AFD96B00821D39 /* AddRecentNewsButtonView.xib */,
+			);
+			path = AddRecentNewsButtonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE19693621ADBB35008D183C /* FeaturedCollectionViewCell.xib in Resources */,
+				DEFFDEE221AFD96B00821D39 /* AddRecentNewsButtonView.xib in Resources */,
 				DE2553C221AADA1E00D9A3C7 /* LaunchScreen.storyboard in Resources */,
 				DE2553BF21AADA1E00D9A3C7 /* Assets.xcassets in Resources */,
 				DE19694221ADC829008D183C /* SearchNewsTableViewCell.xib in Resources */,
@@ -511,6 +526,7 @@
 			files = (
 				DE19693D21ADC817008D183C /* RecentNewsTableViewCell.swift in Sources */,
 				DE19694D21AE8D81008D183C /* RecentNewsViewController.swift in Sources */,
+				DEFFDEE021AFD91200821D39 /* AddRecentNewsButtonView.swift in Sources */,
 				DE19693121ADBAA4008D183C /* CustomViewBase.swift in Sources */,
 				DE19692D21ADB1FE008D183C /* AppConstant.swift in Sources */,
 				DE19692F21ADB400008D183C /* UIViewControllerExtension.swift in Sources */,
