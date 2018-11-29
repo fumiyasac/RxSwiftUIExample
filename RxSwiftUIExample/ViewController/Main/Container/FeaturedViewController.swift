@@ -11,7 +11,7 @@ import AnimatedCollectionViewLayout
 
 class FeaturedViewController: UIViewController {
 
-    private let featuredCellCount: Int = 5
+    private let featuredCellCount: Int = 6
 
     @IBOutlet weak private var featuredCollectionView: UICollectionView!
     

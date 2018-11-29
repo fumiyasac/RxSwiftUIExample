@@ -13,6 +13,7 @@ target 'RxSwiftUIExample' do
 
   # UI
   pod 'EasyTransitions'
+  pod 'CHIPageControl/Jaloro'
   pod 'Floaty'
   pod 'DeckTransition', '~> 2.0'
   pod 'AnimatedCollectionViewLayout'

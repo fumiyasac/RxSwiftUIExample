@@ -145,6 +145,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CHIPageControl/CHIPageControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DeckTransition/DeckTransition.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyTransitions/EasyTransitions.framework"
@@ -159,6 +160,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CHIPageControl/CHIPageControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DeckTransition/DeckTransition.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyTransitions/EasyTransitions.framework"

@@ -2,6 +2,7 @@ PODS:
   - AnimatedCollectionViewLayout (0.4.0)
   - APIKit (4.0.0):
     - Result (~> 4.0)
+  - CHIPageControl/Jaloro (0.1.7)
   - DeckTransition (2.1.0)
   - EasyTransitions (0.5.4)
   - ESPullToRefresh (2.8)
@@ -17,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - AnimatedCollectionViewLayout
   - APIKit
+  - CHIPageControl/Jaloro
   - DeckTransition (~> 2.0)
   - EasyTransitions
   - ESPullToRefresh (from `https://github.com/eggswift/pull-to-refresh`, branch `master`)
@@ -30,6 +32,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AnimatedCollectionViewLayout
     - APIKit
+    - CHIPageControl
     - DeckTransition
     - EasyTransitions
     - Floaty
@@ -53,6 +56,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: f0295119f94d8492fc6ac39e2ced64a471b12699
   APIKit: 23ddce4be7eccd746d2ab3c62713cd80d5846d5a
+  CHIPageControl: bbe1ddd0c688c02ec65b7f7e7d34551a3d16f37c
   DeckTransition: ca707456e3d83928c895fed6f458cbf68c5cac84
   EasyTransitions: 843a3e93b4cac14315e5d997b762bd1d214beb9c
   ESPullToRefresh: 441449eca0618977890516b5665775f705e70c4d
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
   YNDropDownMenu: ba608568d4ac0a37385142f723da8cfc29c7ff11
 
-PODFILE CHECKSUM: 4a3fc63f9e2b49b279af68bb2863c1b09c6ab4b8
+PODFILE CHECKSUM: a9f3eb5b325fa6184edf1698111b5d206fd382b7
 
 COCOAPODS: 1.5.3
