@@ -43,7 +43,6 @@ class SearchViewController: UIViewController {
 
         //
         keywordSearchBar = KeywordSearchBar()
-        //keywordSearchBar.decorateSearchBar()
         keywordSearchBar.placeholder = "Please input keyword."
         keywordSearchBar.delegate = self
 
@@ -63,7 +62,6 @@ class SearchViewController: UIViewController {
 
         // ボタンのタップとスクロールの競合を防止する
         searchTableView.delaysContentTouches = false
-
     }
 }
 

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jZD-Mp-S7W">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News Web Page View Controller-->
+        <scene sceneID="VRz-24-JQx">
+            <objects>
+                <viewController id="jZD-Mp-S7W" customClass="NewsWebPageViewController" customModule="RxSwiftUIExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D2x-fz-Wbg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWB-jN-V8M">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaY-Ud-iZ2">
+                                        <rect key="frame" x="12" y="16" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="L0f-cM-4Ms"/>
+                                            <constraint firstAttribute="height" constant="32" id="yuV-VV-WZc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="32"/>
+                                        <state key="normal" title="×">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Close Button or Pull to Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfT-dx-OG7">
+                                        <rect key="frame" x="58" y="27" width="303" height="15"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41568627450980389" green="0.56862745098039214" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EfT-dx-OG7" secondAttribute="trailing" constant="14" id="2v8-bH-rhY"/>
+                                    <constraint firstItem="vaY-Ud-iZ2" firstAttribute="leading" secondItem="sWB-jN-V8M" secondAttribute="leading" constant="12" id="Acy-l2-kYy"/>
+                                    <constraint firstAttribute="bottom" secondItem="EfT-dx-OG7" secondAttribute="bottom" constant="22" id="EIV-IN-87j"/>
+                                    <constraint firstItem="vaY-Ud-iZ2" firstAttribute="centerY" secondItem="sWB-jN-V8M" secondAttribute="centerY" id="MrT-kG-ety"/>
+                                    <constraint firstAttribute="height" constant="64" id="SJU-h0-0Dg"/>
+                                    <constraint firstItem="EfT-dx-OG7" firstAttribute="leading" secondItem="vaY-Ud-iZ2" secondAttribute="trailing" constant="14" id="laa-Dr-TyQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sWB-jN-V8M" firstAttribute="leading" secondItem="q97-dD-mRQ" secondAttribute="leading" id="Eor-oU-WwL"/>
+                            <constraint firstItem="sWB-jN-V8M" firstAttribute="trailing" secondItem="q97-dD-mRQ" secondAttribute="trailing" id="qaQ-Dr-3kE"/>
+                            <constraint firstItem="sWB-jN-V8M" firstAttribute="top" secondItem="D2x-fz-Wbg" secondAttribute="top" id="v9s-FJ-4Mc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q97-dD-mRQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerBackgroundView" destination="sWB-jN-V8M" id="1Mp-8b-oYP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eud-xg-mIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="52.623688155922046"/>
+        </scene>
+    </scenes>
+</document>
