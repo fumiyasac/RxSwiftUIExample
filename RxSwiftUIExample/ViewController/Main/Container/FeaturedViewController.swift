@@ -41,8 +41,40 @@ class FeaturedViewController: UIViewController {
         layout.scrollDirection = .horizontal
         featuredCollectionView.collectionViewLayout = layout
     }
-}
 
+    // 表示されているセルの位置補正を行う
+    private func moveToNearestVisibleCell() {
+
+        var closestCellIndex = -1
+        var closestDistance: Float = .greatestFiniteMagnitude
+
+        // 現在のUICollectionViewにおける見えている部分のX座標を取得する
+        let visibleCenterX = Float(featuredCollectionView.contentOffset.x + (featuredCollectionView.bounds.size.width / 2))
+
+        // 配置されているセルの個数を元にスナップさせる位置を算出する
+        // https://stackoverflow.com/questions/33855945/uicollectionview-snap-onto-cell-when-scrolling-horizontally
+        let allCellCount = featuredCollectionView.visibleCells.count
+        for i in 0..<allCellCount {
+            let cell = featuredCollectionView.visibleCells[i]
+            let cellWidth = cell.bounds.size.width
+            let cellCenterX = Float(cell.frame.origin.x + cellWidth / 2)
+
+            // 一番近い場所にあるインデックス値を取得する
+            let distance: Float = fabsf(visibleCenterX - cellCenterX)
+            if distance < closestDistance {
+                closestDistance = distance
+                if let indexPath = featuredCollectionView.indexPath(for: cell) {
+                    closestCellIndex = indexPath.row
+                }
+            }
+        }
+
+        // インデックス値が負数でなければ移動する
+        if closestCellIndex >= 0 {
+            featuredCollectionView.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+}
 
 // MARK: - UICollectionViewDelegate
 
@@ -89,37 +121,10 @@ extension FeaturedViewController: UIScrollViewDelegate {
         moveToNearestVisibleCell()
     }
 
-    // 表示されているセルの位置補正を行う
-    private func moveToNearestVisibleCell() {
-
-        var closestCellIndex = -1
-        var closestDistance: Float = .greatestFiniteMagnitude
-
-        // 現在のUICollectionViewにおける見えている部分のX座標を取得する
-        let visibleCenterX = Float(featuredCollectionView.contentOffset.x + (featuredCollectionView.bounds.size.width / 2))
-
-        // 配置されているセルの個数を元にスナップさせる位置を算出する
-        // https://stackoverflow.com/questions/33855945/uicollectionview-snap-onto-cell-when-scrolling-horizontally
-        let allCellCount = featuredCollectionView.visibleCells.count
-        for i in 0..<allCellCount {
-            let cell = featuredCollectionView.visibleCells[i]
-            let cellWidth = cell.bounds.size.width
-            let cellCenterX = Float(cell.frame.origin.x + cellWidth / 2)
-
-            // 一番近い場所にあるインデックス値を取得する
-            let distance: Float = fabsf(visibleCenterX - cellCenterX)
-            if distance < closestDistance {
-                closestDistance = distance
-                if let indexPath = featuredCollectionView.indexPath(for: cell) {
-                    closestCellIndex = indexPath.row
-                }
-            }
-        }
-
-        // インデックス値が負数でなければ移動する
-        if closestCellIndex >= 0 {
-            featuredCollectionView.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+    // ドラッグが終了した際に実行される処理
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            moveToNearestVisibleCell()
         }
     }
 }
-
