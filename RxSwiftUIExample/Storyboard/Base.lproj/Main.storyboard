@@ -183,13 +183,39 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-Qr-cRe">
+                                <rect key="frame" x="2" y="62" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="O7Z-o8-pEP"/>
+                                    <constraint firstAttribute="height" constant="56" id="sY6-fr-vYb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <state key="normal" title="◀︎">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wiu-mg-bEW">
+                                <rect key="frame" x="317" y="62" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="m4N-sb-Xa5"/>
+                                    <constraint firstAttribute="height" constant="56" id="t84-N9-0nW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <state key="normal" title="▶︎">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Z7g-L1-0Aa" secondAttribute="bottom" id="2vQ-YP-4ca"/>
+                            <constraint firstItem="Z1m-Qr-cRe" firstAttribute="leading" secondItem="BDS-Ue-gvk" secondAttribute="leading" constant="2" id="E6D-GU-ReW"/>
+                            <constraint firstItem="Z1m-Qr-cRe" firstAttribute="centerY" secondItem="7Ip-qs-K4y" secondAttribute="centerY" id="Iu0-SN-D3U"/>
                             <constraint firstItem="Z7g-L1-0Aa" firstAttribute="top" secondItem="7Ip-qs-K4y" secondAttribute="top" id="L6v-nG-yxa"/>
                             <constraint firstItem="Z7g-L1-0Aa" firstAttribute="leading" secondItem="7Ip-qs-K4y" secondAttribute="leading" id="UbT-fD-3MF"/>
+                            <constraint firstItem="Wiu-mg-bEW" firstAttribute="centerY" secondItem="7Ip-qs-K4y" secondAttribute="centerY" id="Y8Q-IC-wbP"/>
                             <constraint firstAttribute="trailing" secondItem="Z7g-L1-0Aa" secondAttribute="trailing" id="qXa-2S-ONQ"/>
+                            <constraint firstItem="BDS-Ue-gvk" firstAttribute="trailing" secondItem="Wiu-mg-bEW" secondAttribute="trailing" constant="2" id="zQ6-QE-EDn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BDS-Ue-gvk"/>
                     </view>
@@ -199,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kG-lJ-PEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="-206"/>
+            <point key="canvasLocation" x="952.79999999999995" y="-206.89655172413794"/>
         </scene>
         <!--Recent News View Controller-->
         <scene sceneID="EOD-Iy-D7J">
