@@ -23,6 +23,8 @@ class NewsWebPageViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        showToastForAnnounce()
     }
 
     // MARK: - Function
@@ -31,7 +33,6 @@ class NewsWebPageViewController: UIViewController {
 
     private func setupUserInterface() {
         setupNewsWebview()
-        setupToastForAnnounce()
     }
     
     private func setupNewsWebview() {
@@ -62,17 +63,16 @@ class NewsWebPageViewController: UIViewController {
         }
     }
 
-    private func setupToastForAnnounce() {
+    private func showToastForAnnounce() {
 
         // TODO: 後で正しい形に直す
-        let space: CGFloat = 78.0
-        let centerX = UIScreen.main.bounds.width / 2
-        let centerY = UIScreen.main.bounds.height - space
+        let centerX: CGFloat = UIScreen.main.bounds.width / 2
+        let centerY: CGFloat = 96.0
         let toastShowPoint = CGPoint(x: centerX, y: centerY)
 
         var style = ToastStyle()
-        style.messageFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_NAVIGATION_FONT_SIZE)!
-        style.messageColor = .white
+        style.messageFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.TOAST_FONT_SIZE)!
+        style.messageColor = AppConstant.TOAST_TINT_COLOR
         style.messageAlignment = .center
         style.backgroundColor = UIColor(code: "#333333", alpha: 0.5)
 

@@ -25,5 +25,9 @@ struct AppConstant {
     static let SEARCHBAR_TEXTFIELD_FONT_SIZE: CGFloat = 13.0
     static let SEARCHBAR_PLACEHOLDER_TINT_COLOR: UIColor = .lightGray
     static let SEARCHBAR_PLACEHOLDER_FONT_SIZE: CGFloat = 13.0
+
+    // Toastの設定
+    static let TOAST_TINT_COLOR: UIColor = .white
+    static let TOAST_FONT_SIZE: CGFloat = 12.0
 }
 
