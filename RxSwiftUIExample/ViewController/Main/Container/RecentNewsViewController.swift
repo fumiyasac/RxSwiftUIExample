@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DeckTransition
 
 class RecentNewsViewController: UIViewController {
     
@@ -55,6 +56,13 @@ extension RecentNewsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO:
+
+        // TODO: 正しいものに後で差し替える
+        let sb = UIStoryboard(name: "NewsWebPage", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! NewsWebPageViewController
+        let delegate = DeckTransitioningDelegate()
+        vc.transitioningDelegate = delegate
+        vc.modalPresentationStyle = .custom
+        present(vc, animated: true, completion: nil)
     }
 }
