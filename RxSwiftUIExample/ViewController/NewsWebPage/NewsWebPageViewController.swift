@@ -76,6 +76,6 @@ class NewsWebPageViewController: UIViewController {
         style.messageAlignment = .center
         style.backgroundColor = UIColor(code: "#333333", alpha: 0.5)
 
-        self.view.makeToast("This is Toast Example!", point: toastShowPoint, title: nil, image: nil, completion: nil)
+        self.view.makeToast("This is Toast Example!", duration: 1.6, point: toastShowPoint, title: nil, image: nil, completion: nil)
     }
 }
