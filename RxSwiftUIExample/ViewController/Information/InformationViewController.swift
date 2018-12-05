@@ -25,8 +25,8 @@ class InformationViewController: UIViewController {
     @IBOutlet weak private var informationTopImageView: UIImageView!
 
     // TOP画像において変更対象となるAutoLayoutの制約値
-    @IBOutlet weak var informationTopImageHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var informationTopImageTopConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var informationTopImageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var informationTopImageTopConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +85,8 @@ class InformationViewController: UIViewController {
         self.navigationItem.titleView = menuView
     }
 }
+
+// MARK: - UIScrollViewDelegate
 
 extension InformationViewController: UIScrollViewDelegate {
 
