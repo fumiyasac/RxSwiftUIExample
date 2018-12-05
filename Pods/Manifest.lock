@@ -1,69 +1,44 @@
 PODS:
   - AnimatedCollectionViewLayout (0.4.0)
-  - APIKit (4.0.0):
-    - Result (~> 4.0)
+  - BTNavigationDropdownMenu (0.5)
   - DeckTransition (2.1.0)
-  - EasyTransitions (0.5.4)
-  - ESPullToRefresh (2.8)
   - Floaty (4.1.0)
   - FontAwesome.swift (1.4.6)
-  - Result (4.0.0)
   - RxAtomic (4.4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
   - Toast-Swift (4.0.0)
-  - YNDropDownMenu (3.0.3)
 
 DEPENDENCIES:
   - AnimatedCollectionViewLayout
-  - APIKit
+  - BTNavigationDropdownMenu
   - DeckTransition (~> 2.0)
-  - EasyTransitions
-  - ESPullToRefresh (from `https://github.com/eggswift/pull-to-refresh`, branch `master`)
   - Floaty
   - FontAwesome.swift
   - RxSwift
   - Toast-Swift (~> 4.0.0)
-  - YNDropDownMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AnimatedCollectionViewLayout
-    - APIKit
+    - BTNavigationDropdownMenu
     - DeckTransition
-    - EasyTransitions
     - Floaty
     - FontAwesome.swift
-    - Result
     - RxAtomic
     - RxSwift
     - Toast-Swift
-    - YNDropDownMenu
-
-EXTERNAL SOURCES:
-  ESPullToRefresh:
-    :branch: master
-    :git: https://github.com/eggswift/pull-to-refresh
-
-CHECKOUT OPTIONS:
-  ESPullToRefresh:
-    :commit: f6bc99ccd8f7bf24a9eb6c79ede8ef876119f7fe
-    :git: https://github.com/eggswift/pull-to-refresh
 
 SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: f0295119f94d8492fc6ac39e2ced64a471b12699
-  APIKit: 23ddce4be7eccd746d2ab3c62713cd80d5846d5a
+  BTNavigationDropdownMenu: ba3a26fdb6a56c4721c31df8a0875106c259663a
   DeckTransition: ca707456e3d83928c895fed6f458cbf68c5cac84
-  EasyTransitions: 843a3e93b4cac14315e5d997b762bd1d214beb9c
-  ESPullToRefresh: 441449eca0618977890516b5665775f705e70c4d
   Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
   FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
-  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
-  YNDropDownMenu: ba608568d4ac0a37385142f723da8cfc29c7ff11
 
-PODFILE CHECKSUM: 4a3fc63f9e2b49b279af68bb2863c1b09c6ab4b8
+PODFILE CHECKSUM: a6d443ae6441962e6f39cdeea1299d3b419ee8ae
 
 COCOAPODS: 1.5.3

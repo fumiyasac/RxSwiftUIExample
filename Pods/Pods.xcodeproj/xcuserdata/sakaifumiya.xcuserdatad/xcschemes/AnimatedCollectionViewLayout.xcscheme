@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "01B5F9358EAD17782FA546BF99060034"
+               BlueprintIdentifier = "E8F800C4F993A92D7241FD55390B94C8"
                BlueprintName = "AnimatedCollectionViewLayout"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "AnimatedCollectionViewLayout.framework">

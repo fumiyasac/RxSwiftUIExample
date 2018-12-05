@@ -8,16 +8,11 @@ target 'RxSwiftUIExample' do
   # Reactive Framework
   pod 'RxSwift'
 
-  # Utility
-  pod 'APIKit'
-
   # UI
-  pod 'EasyTransitions'
   pod 'Floaty'
   pod 'DeckTransition', '~> 2.0'
   pod 'AnimatedCollectionViewLayout'
   pod 'FontAwesome.swift'
-  pod 'YNDropDownMenu'
+  pod 'BTNavigationDropdownMenu'
   pod 'Toast-Swift', '~> 4.0.0'
-  pod 'ESPullToRefresh', :git => 'https://github.com/eggswift/pull-to-refresh', :branch => 'master'
 end

@@ -22,6 +22,7 @@ extension UIViewController {
 
         // NavigationBarの調整をする
         self.navigationController!.navigationBar.titleTextAttributes = attributes
+        self.navigationController!.navigationBar.isTranslucent = false
 
         // タイトルを表示する
         self.navigationItem.title = title
