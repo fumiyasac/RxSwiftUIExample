@@ -40,7 +40,7 @@ class FeaturedViewController: UIViewController {
             self?.featuredViewModel.updateCurrentIndex(isIncrement: false)
         }).disposed(by: disposeBag)
 
-        // 現在のインデックス値が変更された場合の処理
+        // 一覧データをUICollectionViewにセットする処理
         featuredViewModel.featuredLists.asObservable().bind(to: featuredCollectionView.rx.items) { (collectionView, row, model) in
             let cell = collectionView.dequeueReusableCustomCell(with: FeaturedCollectionViewCell.self, indexPath: IndexPath(row: row, section: 0))
             cell.setCell(model)
