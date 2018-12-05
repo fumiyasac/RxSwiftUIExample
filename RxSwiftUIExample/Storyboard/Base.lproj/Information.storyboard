@@ -13,28 +13,89 @@
         <!--Information View Controller-->
         <scene sceneID="T8q-Jo-lSl">
             <objects>
-                <viewController id="B5b-0G-40i" customClass="InformationViewController" customModule="RxSwiftUIExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="B5b-0G-40i" customClass="InformationViewController" customModule="RxSwiftUIExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HPL-hG-76G">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1240"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKf-2k-fGX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1220"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="Hbs-6X-5gM">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="dnf-hH-qEw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-WJ-4X3">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="1000"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoS-1S-ZXL">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="hrk-TS-XqQ"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="300" id="pcj-Sp-beJ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0db-Kw-DZx">
+                                                <rect key="frame" x="0.0" y="300" width="375" height="300"/>
+                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="250" constant="300" id="Eq4-1I-UTA"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="b5P-Dh-8pF"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN1-fK-AuI">
+                                                <rect key="frame" x="0.0" y="600" width="375" height="400"/>
+                                                <color key="backgroundColor" red="1" green="0.73268229169999999" blue="0.23804545260000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="D74-hq-KUB"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="400" id="RiD-GM-trd"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="ii3-kg-8YR"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Hbs-6X-5gM" firstAttribute="top" secondItem="lKf-2k-fGX" secondAttribute="top" id="Baq-i5-sje"/>
+                                    <constraint firstItem="9Cg-WJ-4X3" firstAttribute="width" secondItem="lKf-2k-fGX" secondAttribute="width" id="CNp-if-Bw4"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Cg-WJ-4X3" secondAttribute="trailing" id="Cut-If-aNP"/>
+                                    <constraint firstItem="9Cg-WJ-4X3" firstAttribute="top" secondItem="Hbs-6X-5gM" secondAttribute="bottom" id="cvh-FO-ZNV"/>
+                                    <constraint firstItem="9Cg-WJ-4X3" firstAttribute="leading" secondItem="lKf-2k-fGX" secondAttribute="leading" id="dti-DD-fMO"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Cg-WJ-4X3" secondAttribute="bottom" id="kCe-hx-rHt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hbs-6X-5gM" secondAttribute="trailing" id="lXm-IJ-Scm"/>
+                                    <constraint firstItem="Hbs-6X-5gM" firstAttribute="leading" secondItem="lKf-2k-fGX" secondAttribute="leading" id="oUQ-dw-d15"/>
+                                    <constraint firstItem="Hbs-6X-5gM" firstAttribute="width" secondItem="lKf-2k-fGX" secondAttribute="width" id="quK-mZ-WEV"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lKf-2k-fGX" firstAttribute="top" secondItem="HPL-hG-76G" secondAttribute="top" id="018-Ml-4R0"/>
+                            <constraint firstItem="lKf-2k-fGX" firstAttribute="top" secondItem="3Kd-zF-Rtt" secondAttribute="top" id="018-Ml-4R0"/>
                             <constraint firstItem="lKf-2k-fGX" firstAttribute="trailing" secondItem="3Kd-zF-Rtt" secondAttribute="trailing" id="HYi-9a-sld"/>
                             <constraint firstItem="lKf-2k-fGX" firstAttribute="bottom" secondItem="3Kd-zF-Rtt" secondAttribute="bottom" id="jDI-E1-rgj"/>
                             <constraint firstItem="lKf-2k-fGX" firstAttribute="leading" secondItem="3Kd-zF-Rtt" secondAttribute="leading" id="yJx-Dh-evr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Kd-zF-Rtt"/>
                     </view>
+                    <size key="freeformSize" width="375" height="1240"/>
+                    <connections>
+                        <outlet property="informationScrollView" destination="lKf-2k-fGX" id="0Jt-R1-A6q"/>
+                        <outlet property="informationTopImageHeightConstraint" destination="dnf-hH-qEw" id="KYE-XG-7e6"/>
+                        <outlet property="informationTopImageTopConstraint" destination="Baq-i5-sje" id="CEO-yb-eWT"/>
+                        <outlet property="informationTopImageView" destination="Hbs-6X-5gM" id="wGK-BG-6tm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmS-Bf-LC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23.199999999999999" y="10.344827586206897"/>
+            <point key="canvasLocation" x="-23.199999999999999" y="9.8950524737631191"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sample" width="640" height="425"/>
+    </resources>
 </document>
