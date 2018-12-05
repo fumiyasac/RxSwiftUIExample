@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Information Topic 1",
+        "summary": "Text",
+        "image_name": "information1"
+    },
+    {
+        "id": 2,
+        "title": "Information Topic 2",
+        "summary": "Text",
+        "image_name": "information2"
+    },
+    {
+        "id": 3,
+        "title": "Information Topic 3",
+        "summary": "Text",
+        "image_name": "information3"
+    },
+    {
+        "id": 4,
+        "title": "Information Topic 4",
+        "summary": "Text",
+        "image_name": "information4"
+    }
+]

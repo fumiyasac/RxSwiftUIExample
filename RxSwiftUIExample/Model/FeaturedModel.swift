@@ -8,10 +8,14 @@
 
 import Foundation
 
+// MEMO: こちらのデータはViewModelから生成する
 struct FeaturedModel {
+
     let id: Int
     let title: String
     let imageName: String
+
+    // MARK: - Initializer
 
     init(id: Int, title: String, imageName: String) {
         self.id        = id

@@ -9,18 +9,16 @@
 import UIKit
 import BTNavigationDropdownMenu
 
+import RxSwift
+import RxCocoa
+
 class InformationViewController: UIViewController {
 
     private let originalInformationTopImageHeight: CGFloat = 240
-    private let dropDownMenuItems = [
-        "Information Topic 1",
-        "Information Topic 2",
-        "Information Topic 3",
-        "Information Topic 4"
-    ]
+    private let disposeBag = DisposeBag()
 
     private var menuView: BTNavigationDropdownMenu!
-    
+
     @IBOutlet weak private var informationScrollView: UIScrollView!
     @IBOutlet weak private var informationTopImageView: UIImageView!
 
@@ -31,9 +29,23 @@ class InformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // UIまわりの初期設定
         setupUserInterface()
+
+        // ViewModelの初期化
+        let informationViewModel = InformationViewModel(data: getDataFromJSONFile())
+
+        // ドロップダウンメニューの初期化をViewModelの値を元に実行する
+        initializeDropDownMenuDataLists(targetViewModel: informationViewModel)
+        initializeDropDownMenuDecoration()
+
+        // 選択された情報を表示する処理
+        informationViewModel.selectedInformation.asDriver().drive(onNext: { [weak self] in
+            self?.informationScrollView.setContentOffset(CGPoint.zero, animated: true)
+            self?.displayInformation(targetModel: $0)
+        }).disposed(by: disposeBag)
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -46,24 +58,38 @@ class InformationViewController: UIViewController {
         setupNavigationBar(title: "")
         setupInformationScrollView()
         setupInformationTopImageView()
-        setupDropDownMenuView()
     }
 
     private func setupInformationScrollView() {
 
-        // NavigationBar分のスクロール位置がずれてしまう考慮を下記のように行う
+        // UIScrollViewに関する設定をする
+        // NavigationBar分のスクロール位置がずれてしまわないようにする考慮は下記の通り:
         // 考慮する項目1. Information.storyboardにおいて「Adjust Scroll View Insets」のチェックを外す
         // 考慮する項目2. informationScrollViewのTopのAutoLayoutを「Information Scroll View.top = SafeArea.top」とする
         informationScrollView.delegate = self
     }
 
     private func setupInformationTopImageView() {
+
+        // 初期状態時のトップ画像の高さを設定する
         informationTopImageHeightConstraint.constant = originalInformationTopImageHeight
     }
 
-    private func setupDropDownMenuView() {
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: BTTitle.index(0), items: dropDownMenuItems)
+    // ドロップダウンメニューに関する初期設定をする
+    private func initializeDropDownMenuDataLists(targetViewModel: InformationViewModel) {
 
+        // ドロップダウンメニューに関して必要な初期設定をする
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: BTTitle.index(0), items: targetViewModel.allTitleLists)
+        self.navigationItem.titleView = menuView
+
+        // ドロップダウンメニュー内のセルをタップした際は該当の情報を表示するためのViewModel側のメソッドを実行する
+        menuView.didSelectItemAtIndexHandler = { (indexPath: Int) -> Void in
+            targetViewModel.switchSelectedInformation(indexPath: indexPath)
+        }
+    }
+
+    // ドロップダウンメニューに関するデザイン設定をする
+    private func initializeDropDownMenuDecoration() {
         menuView.checkMarkImage
             = UIImage.fontAwesomeIcon(name: .checkCircle, style: .solid, textColor: .white, size: CGSize(width: 16.0, height: 16.0))
         menuView.cellHeight = 58
@@ -72,17 +98,28 @@ class InformationViewController: UIViewController {
         menuView.shouldKeepSelectedCellColor = true
         menuView.cellTextLabelColor = UIColor.white
         menuView.navigationBarTitleFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_NAVIGATION_FONT_SIZE)
-        menuView.cellTextLabelFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: 12.0)
+        menuView.cellTextLabelFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_DROPDOWN_MENU_FONT_SIZE)
         menuView.cellTextLabelAlignment = .left
         menuView.arrowPadding = 15
         menuView.animationDuration = 0.24
         menuView.maskBackgroundColor = UIColor.black
         menuView.maskBackgroundOpacity = 0.64
-        menuView.didSelectItemAtIndexHandler = { (indexPath: Int) -> Void in
-            print("Did select item at index: \(indexPath)")
+    }
+
+    // 受け取ったInformationModelの情報を表示する
+    private func displayInformation(targetModel: InformationModel?) {
+        if let model = targetModel {
+            print(model)
         }
-        
-        self.navigationItem.titleView = menuView
+    }
+
+    // 簡単なJSONファイルで定義されたデータを読み込んでData型で返す
+    private func getDataFromJSONFile() -> Data {
+        if let path = Bundle.main.path(forResource: "information_datasources", ofType: "json") {
+            return try! Data(contentsOf: URL(fileURLWithPath: path))
+        } else {
+            fatalError("Invalid json format or existence of file.")
+        }
     }
 }
 
@@ -90,6 +127,7 @@ class InformationViewController: UIViewController {
 
 extension InformationViewController: UIScrollViewDelegate {
 
+    // スクロールが実行された際にトップ画像に視差効果を付与する
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         informationTopImageTopConstraint.constant = min(scrollView.contentOffset.y, 0)
         informationTopImageHeightConstraint.constant = max(0, originalInformationTopImageHeight - scrollView.contentOffset.y)

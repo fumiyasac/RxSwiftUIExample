@@ -14,7 +14,6 @@ import RxCocoa
 
 class FeaturedViewController: UIViewController {
 
-    private let featuredViewModel = FeaturedViewModel()
     private let disposeBag = DisposeBag()
 
     @IBOutlet weak private var featuredCollectionView: UICollectionView!
@@ -27,17 +26,20 @@ class FeaturedViewController: UIViewController {
         // UIまわりの初期設定
         setupUserInterface()
 
+        // ViewModelの初期化
+        let featuredViewModel = FeaturedViewModel()
+
         // RxSwiftでのUICollectionViewDelegateの宣言
         featuredCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
 
         // 次へボタンを押下した場合の処理
-        nextButton.rx.tap.asDriver().drive(onNext: { [weak self] in
-            self?.featuredViewModel.updateCurrentIndex(isIncrement: true)
+        nextButton.rx.tap.asDriver().drive(onNext: { _ in
+            featuredViewModel.updateCurrentIndex(isIncrement: true)
         }).disposed(by: disposeBag)
 
         // 前へボタンを押下した場合の処理
-        previousButton.rx.tap.asDriver().drive(onNext: { [weak self] in
-            self?.featuredViewModel.updateCurrentIndex(isIncrement: false)
+        previousButton.rx.tap.asDriver().drive(onNext: { _ in
+            featuredViewModel.updateCurrentIndex(isIncrement: false)
         }).disposed(by: disposeBag)
 
         // 一覧データをUICollectionViewにセットする処理

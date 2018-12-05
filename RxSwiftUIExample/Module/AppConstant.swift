@@ -19,6 +19,9 @@ struct AppConstant {
     // ナビゲーションバーの設定
     static let COMMON_NAVIGATION_FONT_SIZE: CGFloat = 14.0
 
+    // ドロップダウンメニューの設定
+    static let COMMON_DROPDOWN_MENU_FONT_SIZE: CGFloat = 12.0
+
     // 検索バーの設定
     static let SEARCHBAR_TEXTFIELD_BACKGROUND_COLOR: UIColor = .white
     static let SEARCHBAR_TEXTFIELD_TINT_COLOR: UIColor = UIColor(code: "#666666")
