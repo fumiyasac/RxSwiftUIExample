@@ -5,6 +5,8 @@ PODS:
   - Floaty (4.1.0)
   - FontAwesome.swift (1.4.6)
   - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
   - Toast-Swift (4.0.0)
@@ -15,6 +17,7 @@ DEPENDENCIES:
   - DeckTransition (~> 2.0)
   - Floaty
   - FontAwesome.swift
+  - RxCocoa
   - RxSwift
   - Toast-Swift (~> 4.0.0)
 
@@ -26,6 +29,7 @@ SPEC REPOS:
     - Floaty
     - FontAwesome.swift
     - RxAtomic
+    - RxCocoa
     - RxSwift
     - Toast-Swift
 
@@ -36,9 +40,10 @@ SPEC CHECKSUMS:
   Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
   FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
 
-PODFILE CHECKSUM: a6d443ae6441962e6f39cdeea1299d3b419ee8ae
+PODFILE CHECKSUM: 4d6bf70ed6dae8fba428b238068808b5ae5eab54
 
 COCOAPODS: 1.5.3

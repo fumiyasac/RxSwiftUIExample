@@ -9,16 +9,58 @@
 import UIKit
 import AnimatedCollectionViewLayout
 
+import RxSwift
+import RxCocoa
+
 class FeaturedViewController: UIViewController {
 
-    private let featuredCellCount: Int = 6
+    private let featuredViewModel = FeaturedViewModel()
+    private let disposeBag = DisposeBag()
 
     @IBOutlet weak private var featuredCollectionView: UICollectionView!
+    @IBOutlet weak private var previousButton: UIButton!
+    @IBOutlet weak private var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // UIまわりの初期設定
         setupUserInterface()
+
+        // RxSwiftでのUICollectionViewDelegateの宣言
+        featuredCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+
+        // 次へボタンを押下した場合の処理
+        nextButton.rx.tap.asDriver().drive(onNext: { [weak self] in
+            self?.featuredViewModel.updateCurrentIndex(isIncrement: true)
+        }).disposed(by: disposeBag)
+
+        // 前へボタンを押下した場合の処理
+        previousButton.rx.tap.asDriver().drive(onNext: { [weak self] in
+            self?.featuredViewModel.updateCurrentIndex(isIncrement: false)
+        }).disposed(by: disposeBag)
+
+        // 現在のインデックス値が変更された場合の処理
+        featuredViewModel.featuredLists.asObservable().bind(to: featuredCollectionView.rx.items) { (collectionView, row, model) in
+            let cell = collectionView.dequeueReusableCustomCell(with: FeaturedCollectionViewCell.self, indexPath: IndexPath(row: row, section: 0))
+            cell.setCell(model)
+            return cell
+        }.disposed(by: disposeBag)
+
+        // 現在のインデックス値が変更された場合の処理
+        featuredViewModel.currentIndex.asDriver().drive(onNext: { [weak self] in
+            self?.featuredCollectionView.scrollToItem(at: IndexPath(row: $0, section: 0), at: .centeredHorizontally, animated: true)
+        }).disposed(by: disposeBag)
+        
+        // 次へボタンの表示状態を決定する
+        featuredViewModel.shouldHideNextButton.asDriver().drive(onNext: { [weak self] in
+            self?.nextButton.isHidden = $0
+        }).disposed(by: disposeBag)
+
+        // 前へボタンの表示状態を決定する
+        featuredViewModel.shouldHidePreviousButton.asDriver().drive(onNext: { [weak self] in
+            self?.previousButton.isHidden = $0
+        }).disposed(by: disposeBag)
     }
 
     // MARK: - Private Function
@@ -29,10 +71,9 @@ class FeaturedViewController: UIViewController {
 
     private func setupFeaturedCollectionView() {
 
-        featuredCollectionView.delegate = self
-        featuredCollectionView.dataSource = self
-        featuredCollectionView.showsHorizontalScrollIndicator = true
-        featuredCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
+        // UICollectionViewに関する初期設定
+        featuredCollectionView.isScrollEnabled = false
+        featuredCollectionView.showsHorizontalScrollIndicator = false
         featuredCollectionView.registerCustomCell(FeaturedCollectionViewCell.self)
 
         // UICollectionViewに付与するアニメーションに関する設定
@@ -40,64 +81,6 @@ class FeaturedViewController: UIViewController {
         layout.animator = CubeAttributesAnimator()
         layout.scrollDirection = .horizontal
         featuredCollectionView.collectionViewLayout = layout
-    }
-
-    // 表示されているセルの位置補正を行う
-    private func moveToNearestVisibleCell() {
-
-        var closestCellIndex = -1
-        var closestDistance: Float = .greatestFiniteMagnitude
-
-        // 現在のUICollectionViewにおける見えている部分のX座標を取得する
-        let visibleCenterX = Float(featuredCollectionView.contentOffset.x + (featuredCollectionView.bounds.size.width / 2))
-
-        // 配置されているセルの個数を元にスナップさせる位置を算出する
-        // https://stackoverflow.com/questions/33855945/uicollectionview-snap-onto-cell-when-scrolling-horizontally
-        let allCellCount = featuredCollectionView.visibleCells.count
-        for i in 0..<allCellCount {
-            let cell = featuredCollectionView.visibleCells[i]
-            let cellWidth = cell.bounds.size.width
-            let cellCenterX = Float(cell.frame.origin.x + cellWidth / 2)
-
-            // 一番近い場所にあるインデックス値を取得する
-            let distance: Float = fabsf(visibleCenterX - cellCenterX)
-            if distance < closestDistance {
-                closestDistance = distance
-                if let indexPath = featuredCollectionView.indexPath(for: cell) {
-                    closestCellIndex = indexPath.row
-                }
-            }
-        }
-
-        // インデックス値が負数でなければ移動する
-        if closestCellIndex >= 0 {
-            featuredCollectionView.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-        }
-    }
-}
-
-// MARK: - UICollectionViewDelegate
-
-extension FeaturedViewController: UICollectionViewDelegate {}
-
-// MARK: - UICollectionViewDataSource
-
-extension FeaturedViewController: UICollectionViewDataSource {
-    
-    // 配置するセルの個数を設定する
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return featuredCellCount
-    }
-    
-    // 配置するセルの表示内容を設定する
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCustomCell(with: FeaturedCollectionViewCell.self, indexPath: indexPath)
-        return cell
-    }
-
-    // セル押下時の処理内容を記載する
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO:
     }
 }
 
@@ -108,23 +91,5 @@ extension FeaturedViewController: UICollectionViewDelegateFlowLayout {
     // タブ用のセルにおける矩形サイズを設定する
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return FeaturedCollectionViewCell.cellSize
-    }
-}
-
-
-// MARK: - UIScrollViewDelegate
-
-extension FeaturedViewController: UIScrollViewDelegate {
-
-    // スクロールの減速が終了した際に実行される処理
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        moveToNearestVisibleCell()
-    }
-
-    // ドラッグが終了した際に実行される処理
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            moveToNearestVisibleCell()
-        }
     }
 }

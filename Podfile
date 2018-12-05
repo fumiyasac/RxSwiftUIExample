@@ -7,7 +7,7 @@ target 'RxSwiftUIExample' do
 
   # Reactive Framework
   pod 'RxSwift'
-
+  pod 'RxCocoa'
   # UI
   pod 'Floaty'
   pod 'DeckTransition', '~> 2.0'

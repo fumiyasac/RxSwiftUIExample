@@ -20,4 +20,10 @@ class FeaturedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var titleLabel: UILabel!
 
     // MARK: - Function
+
+    func setCell(_ model: FeaturedModel)  {
+        thumbnailImageView.clipsToBounds = true
+        thumbnailImageView.image = UIImage(named: model.imageName)
+        titleLabel.text = model.title
+    }
 }

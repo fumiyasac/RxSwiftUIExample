@@ -221,6 +221,8 @@
                     </view>
                     <connections>
                         <outlet property="featuredCollectionView" destination="Z7g-L1-0Aa" id="l5M-f4-ISc"/>
+                        <outlet property="nextButton" destination="Wiu-mg-bEW" id="qE9-nN-C5A"/>
+                        <outlet property="previousButton" destination="Z1m-Qr-cRe" id="vwS-6K-SBk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kG-lJ-PEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
