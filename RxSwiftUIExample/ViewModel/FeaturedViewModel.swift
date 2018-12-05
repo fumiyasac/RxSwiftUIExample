@@ -35,7 +35,7 @@ class FeaturedViewModel {
     func updateCurrentIndex(isIncrement: Bool = true) {
         let newIndex = isIncrement ? currentIndex.value + 1 : currentIndex.value - 1
         shouldHidePreviousButton.accept((newIndex == 0))
-        shouldHideNextButton.accept((newIndex == featuredModelMaxCount - 1))
+        shouldHideNextButton.accept((newIndex == featuredModelMaxCount))
         currentIndex.accept(newIndex)
     }
 }
