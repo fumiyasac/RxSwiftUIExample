@@ -10,15 +10,27 @@ import UIKit
 import WebKit
 import Toast_Swift
 
-// MEMO: DeckTransitionを使用した表示でスワイプが強いと戻ってしまう...
+import RxSwift
+import RxCocoa
+
+// MEMO: DeckTransitionを使用した表示ではスワイプが強いと戻ってしまう...
 class NewsWebPageViewController: UIViewController {
 
+    private let disposeBag = DisposeBag()
+
+    @IBOutlet weak private var closeButton: UIButton!
     @IBOutlet weak private var headerBackgroundView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // UIまわりの初期設定
         setupUserInterface()
+
+        // 戻るボタンを押下した場合の処理
+        closeButton.rx.tap.asDriver().drive(onNext: { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }).disposed(by: disposeBag)
     }
 
     override func viewDidAppear(_ animated: Bool) {

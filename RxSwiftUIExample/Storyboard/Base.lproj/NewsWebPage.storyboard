@@ -59,6 +59,7 @@
                         <viewLayoutGuide key="safeArea" id="q97-dD-mRQ"/>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="vaY-Ud-iZ2" id="y1o-j3-0pw"/>
                         <outlet property="headerBackgroundView" destination="sWB-jN-V8M" id="1Mp-8b-oYP"/>
                     </connections>
                 </viewController>
