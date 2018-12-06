@@ -14,6 +14,7 @@ class FeaturedViewModel {
 
     private let featuredModelMaxCount = 3
 
+    // ViewController側で利用するためのプロパティ
     let shouldHidePreviousButton = BehaviorRelay<Bool>(value: true)
     let shouldHideNextButton = BehaviorRelay<Bool>(value: false)
     let currentIndex = BehaviorRelay<Int>(value: 0)
@@ -27,7 +28,7 @@ class FeaturedViewModel {
         let featuredListRange = (0...featuredModelMaxCount)
         featuredLists.accept(featuredListRange.compactMap{
             let id = $0 + 1
-            return FeaturedModel(id: id, title: "Featured Sample [Index: \($0)]", imageName: "sample")
+            return FeaturedModel(id: id, title: "Featured Sample [Index: \($0)]", imageName: "featured\(id)")
         })
     }
 

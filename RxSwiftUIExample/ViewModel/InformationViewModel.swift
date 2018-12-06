@@ -14,6 +14,7 @@ class InformationViewModel {
 
     private let informationLists: [InformationModel]!
 
+    // ViewController側で利用するためのプロパティ
     let allTitleLists: [String]!
     let selectedInformation = BehaviorRelay<InformationModel?>(value: nil)
 
@@ -21,13 +22,13 @@ class InformationViewModel {
 
     init(data: Data) {
 
-        //
+        // ローカル内のJSONファイルから表示用のデータを取得してInformationModelの型に合致するようにする
         informationLists = try! JSONDecoder().decode([InformationModel].self, from: data)
 
-        //
+        // タイトルの一覧を取得する
         allTitleLists = informationLists.compactMap{ return $0.title }
 
-        //
+        // 現在せ表示中のInformationModel要素を保持する
         selectedInformation.accept(informationLists.first)
     }
 

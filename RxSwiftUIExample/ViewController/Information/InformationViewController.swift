@@ -21,6 +21,8 @@ class InformationViewController: UIViewController {
 
     @IBOutlet weak private var informationScrollView: UIScrollView!
     @IBOutlet weak private var informationTopImageView: UIImageView!
+    @IBOutlet weak private var informationTitleLabel: UILabel!
+    @IBOutlet weak private var informationSummaryLabel: UILabel!
 
     // TOP画像において変更対象となるAutoLayoutの制約値
     @IBOutlet private weak var informationTopImageHeightConstraint: NSLayoutConstraint!
@@ -72,7 +74,8 @@ class InformationViewController: UIViewController {
 
     private func setupInformationTopImageView() {
 
-        // 初期状態時のトップ画像の高さを設定する
+        // 初期状態時のトップ画像の高さや拡大モード等をを設定する
+        informationTopImageView.contentMode = .scaleAspectFill
         informationTopImageHeightConstraint.constant = originalInformationTopImageHeight
     }
 
@@ -119,7 +122,17 @@ class InformationViewController: UIViewController {
     // 受け取ったInformationModelの情報を表示する
     private func displayInformation(targetModel: InformationModel?) {
         if let model = targetModel {
-            print(model)
+
+            informationTopImageView.image = UIImage(named: model.imageName)
+            informationTitleLabel.text = model.title
+
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 6
+            var attributes = [NSAttributedString.Key : Any]()
+            attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
+            attributes[NSAttributedString.Key.font] = UIFont(name: AppConstant.COMMON_FONT_NORMAL, size: 14.0)
+            attributes[NSAttributedString.Key.foregroundColor] = UIColor(code: "#333333")
+            informationSummaryLabel.attributedText = NSAttributedString(string: model.summary, attributes: attributes)
         }
     }
 

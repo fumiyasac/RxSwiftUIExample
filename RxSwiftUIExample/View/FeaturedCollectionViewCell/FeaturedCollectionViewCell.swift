@@ -22,6 +22,7 @@ class FeaturedCollectionViewCell: UICollectionViewCell {
     // MARK: - Function
 
     func setCell(_ model: FeaturedModel)  {
+        thumbnailImageView.contentMode = .scaleAspectFill
         thumbnailImageView.clipsToBounds = true
         thumbnailImageView.image = UIImage(named: model.imageName)
         titleLabel.text = model.title
