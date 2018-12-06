@@ -49,6 +49,7 @@ class InformationViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        // メニューを表示した状態から前の画面へ戻る場合に対する考慮をする
         menuView.hide()
     }
 

@@ -10,37 +10,30 @@ import UIKit
 import Floaty
 import FontAwesome_swift
 
+import RxSwift
+import RxCocoa
+
 class MainViewController: UIViewController {
 
+    private let disposeBag = DisposeBag()
+    
     @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var floatyMenuButton: Floaty!
     @IBOutlet weak private var addNewsButton: UIButton!
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        setupNotifications()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // UIまわりの初期設定
         setupUserInterface()
-    }
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+        // フォアグラウンドからバックグラウンドに移行する直前のタイミングでフロートボタン表示を戻す
+        NotificationCenter.default.rx.notification(UIApplication.willResignActiveNotification, object: nil).subscribe(onNext:{ [weak self] _ in
+            self?.floatyMenuButton.close()
+        }).disposed(by: disposeBag)
     }
 
     // MARK: - Private Function
-
-    @objc private func hideFloatyMenuButton() {
-        floatyMenuButton.close()
-    }
-
-    private func setupNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.hideFloatyMenuButton), name: UIApplication.willResignActiveNotification, object: nil)
-    }
 
     private func setupUserInterface() {
         setupNavigationBar(title: "World News Archives")
