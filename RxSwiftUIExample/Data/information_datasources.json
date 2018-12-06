@@ -1,25 +1,25 @@
 [
     {
         "id": 1,
-        "title": "This is information topic title 1 of 4",
+        "title": "Topic title 1 of 4",
         "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself.",
         "image_name": "information1"
     },
     {
         "id": 2,
-        "title": "This is information topic title 2 of 4",
+        "title": "Topic title 2 of 4",
         "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself.",
         "image_name": "information2"
     },
     {
         "id": 3,
-        "title": "This is information topic title 3 of 4",
+        "title": "Topic title 3 of 4",
         "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself.",
         "image_name": "information3"
     },
     {
         "id": 4,
-        "title": "This is information topic title 4 of 4",
+        "title": "Topic title 4 of 4",
         "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself.",
         "image_name": "information4"
     }
