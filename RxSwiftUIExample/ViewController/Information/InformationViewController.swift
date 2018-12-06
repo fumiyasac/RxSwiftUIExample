@@ -78,7 +78,7 @@ class InformationViewController: UIViewController {
     // ドロップダウンメニューに関する初期設定をする
     private func initializeDropDownMenuDataLists(targetViewModel: InformationViewModel) {
 
-        // ドロップダウンメニューに関して必要な初期設定をする
+        // ドロップダウンメニューに関して必要な初期設定をする(リスト表示の部分でViewModelを利用する)
         menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: BTTitle.index(0), items: targetViewModel.allTitleLists)
         self.navigationItem.titleView = menuView
 
@@ -91,19 +91,20 @@ class InformationViewController: UIViewController {
     // ドロップダウンメニューに関するデザイン設定をする
     private func initializeDropDownMenuDecoration() {
         menuView.checkMarkImage
-            = UIImage.fontAwesomeIcon(name: .checkCircle, style: .solid, textColor: .white, size: CGSize(width: 16.0, height: 16.0))
+            = UIImage.fontAwesomeIcon(name: .checkCircle, style: .solid, textColor: .gray, size: CGSize(width: 16.0, height: 16.0))
         menuView.cellHeight = 58
-        menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
-        menuView.cellSelectionColor = UIColor(code: "#6a91c1")
+        menuView.cellBackgroundColor = .white
+        menuView.cellSeparatorColor = UIColor(code: "#ccccc3")
+        menuView.cellSelectionColor = UIColor(code: "#f7f7f7")
         menuView.shouldKeepSelectedCellColor = true
-        menuView.cellTextLabelColor = UIColor.white
+        menuView.cellTextLabelColor = .gray
         menuView.navigationBarTitleFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_NAVIGATION_FONT_SIZE)
         menuView.cellTextLabelFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_DROPDOWN_MENU_FONT_SIZE)
         menuView.cellTextLabelAlignment = .left
         menuView.arrowPadding = 15
         menuView.animationDuration = 0.24
-        menuView.maskBackgroundColor = UIColor.black
-        menuView.maskBackgroundOpacity = 0.64
+        menuView.maskBackgroundColor = .black
+        menuView.maskBackgroundOpacity = 0.72
     }
 
     // 受け取ったInformationModelの情報を表示する
