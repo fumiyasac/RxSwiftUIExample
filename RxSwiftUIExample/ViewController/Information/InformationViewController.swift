@@ -90,18 +90,26 @@ class InformationViewController: UIViewController {
 
     // ドロップダウンメニューに関するデザイン設定をする
     private func initializeDropDownMenuDecoration() {
-        menuView.checkMarkImage
-            = UIImage.fontAwesomeIcon(name: .checkCircle, style: .solid, textColor: .gray, size: CGSize(width: 16.0, height: 16.0))
+
+        // 参考: セルの要素に関する設定
         menuView.cellHeight = 58
         menuView.cellBackgroundColor = .white
         menuView.cellSeparatorColor = UIColor(code: "#ccccc3")
         menuView.cellSelectionColor = UIColor(code: "#f7f7f7")
-        menuView.shouldKeepSelectedCellColor = true
         menuView.cellTextLabelColor = .gray
-        menuView.navigationBarTitleFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_NAVIGATION_FONT_SIZE)
         menuView.cellTextLabelFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_DROPDOWN_MENU_FONT_SIZE)
         menuView.cellTextLabelAlignment = .left
+        menuView.shouldKeepSelectedCellColor = true
+
+        // 参考: セルのアイコン表示に関する設定
         menuView.arrowPadding = 15
+        menuView.checkMarkImage
+            = UIImage.fontAwesomeIcon(name: .checkCircle, style: .solid, textColor: .gray, size: CGSize(width: 16.0, height: 16.0))
+
+        // 参考: ナビゲーションバーのタイトル表示に関する設定
+        menuView.navigationBarTitleFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.COMMON_NAVIGATION_FONT_SIZE)
+
+        // 参考: ドロップダウンメニュー表示に関する設定
         menuView.animationDuration = 0.24
         menuView.maskBackgroundColor = .black
         menuView.maskBackgroundOpacity = 0.72
