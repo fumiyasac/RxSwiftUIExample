@@ -12,6 +12,8 @@ import RxCocoa
 
 class InformationViewModel {
 
+    // 内部で利用するためのプロパティ
+    private let informationModelMaxCount: Int!
     private let informationLists: [InformationModel]!
 
     // ViewController側で利用するためのプロパティ
@@ -28,7 +30,10 @@ class InformationViewModel {
         // タイトルの一覧を取得する
         allTitles = Observable<[String]>.just(informationLists.compactMap{ return $0.title })
 
-        // 最初に表示するのInformationModel要素を保持する
+        // 表示用のデータの個数を反映する
+        informationModelMaxCount = informationLists.count
+
+        // 最初に表示するのInformationModel要素を反映する
         selectedInformation.accept(informationLists.first)
     }
 
@@ -36,6 +41,17 @@ class InformationViewModel {
 
     // 表示したいインデックス値に該当する値(informationLists)を選択状態にする
     func switchSelectedInformation(indexPath: Int) {
-        selectedInformation.accept(informationLists[indexPath])
+        let targetIndex = adjustIndexPath(indexPath: indexPath)
+        selectedInformation.accept(informationLists[targetIndex])
+    }
+
+    // MARK: - Private Function
+
+    private func adjustIndexPath(indexPath: Int) -> Int {
+        if 0...informationModelMaxCount - 1 ~= indexPath {
+            return indexPath
+        } else {
+            return 0
+        }
     }
 }

@@ -12,7 +12,8 @@ import RxCocoa
 
 class FeaturedViewModel {
 
-    private let featuredModelMaxCount = 3
+    // 内部で利用するためのプロパティ
+    private let featuredModelMaxCount: Int!
 
     // ViewController側で利用するためのプロパティ
     let featuredLists: Observable<[FeaturedModel]>!
@@ -26,6 +27,11 @@ class FeaturedViewModel {
 
         // JSONファイルから表示用のデータを取得してFeaturedModelの型に合致するようにする
         let featuredModels = try! JSONDecoder().decode([FeaturedModel].self, from: data)
+
+        // 表示用のデータの個数を反映する
+        featuredModelMaxCount = featuredModels.count
+
+        // 表示用のデータを反映する
         featuredLists = Observable<[FeaturedModel]>.just(featuredModels)
     }
 
@@ -35,11 +41,24 @@ class FeaturedViewModel {
     func updateCurrentIndex(isIncrement: Bool = true) {
 
         // 現在のcurrentIndex.valueに対して「+1」または「-1」を行う
-        let newIndex = isIncrement ? currentIndex.value + 1 : currentIndex.value - 1
+        let targetIndex = adjustNewIndex(isIncrement: isIncrement)
 
         // 関連するプロパティの値を更新する
-        shouldHidePreviousButton.accept((newIndex == 0))
-        shouldHideNextButton.accept((newIndex == featuredModelMaxCount))
-        currentIndex.accept(newIndex)
+        shouldHidePreviousButton.accept((targetIndex == 0))
+        shouldHideNextButton.accept((targetIndex == featuredModelMaxCount - 1))
+        currentIndex.accept(targetIndex)
+    }
+
+    // MARK: - Private Function
+
+    private func adjustNewIndex(isIncrement: Bool = true) -> Int {
+        let newIndex = isIncrement ? currentIndex.value + 1 : currentIndex.value - 1
+        if newIndex > featuredModelMaxCount - 1 {
+            return featuredModelMaxCount - 1
+        } else if newIndex < 0 {
+            return 0
+        } else {
+            return newIndex
+        }
     }
 }
