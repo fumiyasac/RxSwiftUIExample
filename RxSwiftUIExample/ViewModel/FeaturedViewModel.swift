@@ -15,21 +15,18 @@ class FeaturedViewModel {
     private let featuredModelMaxCount = 3
 
     // ViewController側で利用するためのプロパティ
+    let featuredLists: Observable<[FeaturedModel]>!
     let shouldHidePreviousButton = BehaviorRelay<Bool>(value: true)
     let shouldHideNextButton = BehaviorRelay<Bool>(value: false)
     let currentIndex = BehaviorRelay<Int>(value: 0)
-    let featuredLists = BehaviorRelay<[FeaturedModel]>(value: [])
 
     // MARK: - Initializer
 
-    init() {
+    init(data: Data) {
 
-        // 表示用のデータを作成する
-        let featuredListRange = (0...featuredModelMaxCount)
-        featuredLists.accept(featuredListRange.compactMap{
-            let id = $0 + 1
-            return FeaturedModel(id: id, title: "Featured Sample [Index: \($0)]", imageName: "featured\(id)")
-        })
+        // JSONファイルから表示用のデータを取得してFeaturedModelの型に合致するようにする
+        let featuredModels = try! JSONDecoder().decode([FeaturedModel].self, from: data)
+        featuredLists = Observable<[FeaturedModel]>.just(featuredModels)
     }
 
     // MARK: - Function

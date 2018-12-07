@@ -27,7 +27,7 @@ class FeaturedViewController: UIViewController {
         setupUserInterface()
 
         // ViewModelの初期化
-        let featuredViewModel = FeaturedViewModel()
+        let featuredViewModel = FeaturedViewModel(data: getDataFromJSONFile())
 
         // RxSwiftでのUICollectionViewDelegateの宣言
         featuredCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -43,7 +43,7 @@ class FeaturedViewController: UIViewController {
         }).disposed(by: disposeBag)
 
         // 一覧データをUICollectionViewにセットする処理
-        featuredViewModel.featuredLists.asObservable().bind(to: featuredCollectionView.rx.items) { (collectionView, row, model) in
+        featuredViewModel.featuredLists.bind(to: featuredCollectionView.rx.items) { (collectionView, row, model) in
             let cell = collectionView.dequeueReusableCustomCell(with: FeaturedCollectionViewCell.self, indexPath: IndexPath(row: row, section: 0))
             cell.setCell(model)
             return cell
@@ -83,6 +83,15 @@ class FeaturedViewController: UIViewController {
         layout.animator = CubeAttributesAnimator()
         layout.scrollDirection = .horizontal
         featuredCollectionView.collectionViewLayout = layout
+    }
+
+    // JSONファイルで定義されたデータを読み込んでData型で返す
+    private func getDataFromJSONFile() -> Data {
+        if let path = Bundle.main.path(forResource: "featured_datasources", ofType: "json") {
+            return try! Data(contentsOf: URL(fileURLWithPath: path))
+        } else {
+            fatalError("Invalid json format or existence of file.")
+        }
     }
 }
 

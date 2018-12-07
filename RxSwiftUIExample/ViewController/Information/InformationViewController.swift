@@ -37,9 +37,12 @@ class InformationViewController: UIViewController {
         // ViewModelの初期化
         let informationViewModel = InformationViewModel(data: getDataFromJSONFile())
 
-        // ドロップダウンメニューの初期化をViewModelの値を元に実行する
-        initializeDropDownMenuDataLists(targetViewModel: informationViewModel)
-        initializeDropDownMenuDecoration()
+        // ドロップダウンメニューの初期化をする処理
+        informationViewModel.allTitles.subscribe(onNext: { [weak self] in
+            let targetTitles = $0.map{$0}
+            self?.initializeDropDownMenuDataLists(targetViewModel: informationViewModel, targetTitles: targetTitles)
+            self?.initializeDropDownMenuDecoration()
+        }).disposed(by: disposeBag)
 
         // 選択された情報を表示する処理
         informationViewModel.selectedInformation.asDriver().drive(onNext: { [weak self] in
@@ -80,10 +83,10 @@ class InformationViewController: UIViewController {
     }
 
     // ドロップダウンメニューに関する初期設定をする
-    private func initializeDropDownMenuDataLists(targetViewModel: InformationViewModel) {
+    private func initializeDropDownMenuDataLists(targetViewModel: InformationViewModel, targetTitles: [String]) {
 
         // ドロップダウンメニューに関して必要な初期設定をする(リスト表示の部分でViewModelを利用する)
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: BTTitle.index(0), items: targetViewModel.allTitleLists)
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: BTTitle.index(0), items: targetTitles)
         self.navigationItem.titleView = menuView
 
         // ドロップダウンメニュー内のセルをタップした際は該当の情報を表示するためのViewModel側のメソッドを実行する
@@ -136,7 +139,7 @@ class InformationViewController: UIViewController {
         }
     }
 
-    // 簡単なJSONファイルで定義されたデータを読み込んでData型で返す
+    // JSONファイルで定義されたデータを読み込んでData型で返す
     private func getDataFromJSONFile() -> Data {
         if let path = Bundle.main.path(forResource: "information_datasources", ofType: "json") {
             return try! Data(contentsOf: URL(fileURLWithPath: path))

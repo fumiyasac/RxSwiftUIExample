@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Featured Slide Sample 1",
+        "image_name": "featured1"
+    },
+    {
+        "id": 2,
+        "title": "Featured Slide Sample 2",
+        "image_name": "featured2"
+    },
+    {
+        "id": 3,
+        "title": "Featured Slide Sample 3",
+        "image_name": "featured3"
+    },
+    {
+        "id": 4,
+        "title": "Featured Slide Sample 4",
+        "image_name": "featured4"
+    }
+]

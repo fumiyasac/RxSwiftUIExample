@@ -9,7 +9,7 @@
 import Foundation
 
 // MEMO: こちらのデータはJSONから生成する
-struct InformationModel: Codable {
+struct InformationModel: Decodable {
 
     let id: Int
     let title: String
