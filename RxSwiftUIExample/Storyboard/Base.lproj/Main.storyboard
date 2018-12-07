@@ -70,40 +70,21 @@
                                                 </constraints>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMQ-Cb-T5b">
-                                                <rect key="frame" x="0.0" y="292" width="375" height="700"/>
+                                                <rect key="frame" x="0.0" y="292" width="375" height="748"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="DcK-LK-i1s"/>
-                                                    <constraint firstAttribute="height" priority="250" constant="700" id="xcj-3R-PfG"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="748" id="xcj-3R-PfG"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="B5a-Ez-L2Z" kind="embed" id="xjs-K6-Gat"/>
+                                                    <segue destination="B5a-Ez-L2Z" kind="embed" identifier="ConnectRecentNewsContainer" id="xjs-K6-Gat"/>
                                                 </connections>
                                             </containerView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-Ng-5Jf">
-                                                <rect key="frame" x="0.0" y="992" width="375" height="48"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW1-tc-5a7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
-                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
-                                                        <state key="normal" title="↓ More Next 10 News">
-                                                            <color key="titleColor" red="0.15686274510000001" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="gW1-tc-5a7" firstAttribute="leading" secondItem="cBd-Ng-5Jf" secondAttribute="leading" id="DIg-jU-5J4"/>
-                                                    <constraint firstAttribute="bottom" secondItem="gW1-tc-5a7" secondAttribute="bottom" id="Fld-1N-9BZ"/>
-                                                    <constraint firstItem="gW1-tc-5a7" firstAttribute="top" secondItem="cBd-Ng-5Jf" secondAttribute="top" id="RpY-tM-Gz7"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gW1-tc-5a7" secondAttribute="trailing" id="UcN-he-XbX"/>
-                                                    <constraint firstAttribute="height" constant="48" id="mnT-d0-bKw"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="CMQ-Cb-T5b" firstAttribute="leading" secondItem="Xwr-1o-sCD" secondAttribute="leading" id="PDV-Ar-hIb"/>
                                             <constraint firstAttribute="trailing" secondItem="CMQ-Cb-T5b" secondAttribute="trailing" id="VMC-5a-UJi"/>
                                             <constraint firstItem="CMQ-Cb-T5b" firstAttribute="top" secondItem="XMT-r9-R6F" secondAttribute="bottom" id="dCx-d3-Goj"/>
+                                            <constraint firstAttribute="bottom" secondItem="CMQ-Cb-T5b" secondAttribute="bottom" id="hBP-DQ-u37"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -138,14 +119,14 @@
                     <navigationItem key="navigationItem" id="rpE-Hc-CnV"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
-                        <outlet property="addNewsButton" destination="gW1-tc-5a7" id="soH-4z-qIT"/>
                         <outlet property="floatyMenuButton" destination="9Uo-Li-Fe0" id="oM3-s6-rGT"/>
                         <outlet property="mainScrollView" destination="LHz-pt-1ob" id="WKZ-cr-uGH"/>
+                        <outlet property="recentNewsContainerHeight" destination="xcj-3R-PfG" id="XIb-ho-QAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="216.80000000000001" y="132.23388305847078"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iG2-08-3Oz">
@@ -234,7 +215,7 @@
             <objects>
                 <viewController id="B5a-Ez-L2Z" customClass="RecentNewsViewController" customModule="RxSwiftUIExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P2O-c0-4MW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MQk-7s-U32">
@@ -242,18 +223,42 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY9-3j-pFS">
+                                <rect key="frame" x="0.0" y="700" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsP-8a-sBa">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                        <state key="normal" title="↓ More Next 10 News">
+                                            <color key="titleColor" red="0.15686274510000001" green="0.21960784310000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dsP-8a-sBa" firstAttribute="top" secondItem="TY9-3j-pFS" secondAttribute="top" id="5b1-7F-ITe"/>
+                                    <constraint firstItem="dsP-8a-sBa" firstAttribute="leading" secondItem="TY9-3j-pFS" secondAttribute="leading" id="AIV-ak-2z2"/>
+                                    <constraint firstAttribute="height" constant="48" id="NCM-Zk-znw"/>
+                                    <constraint firstAttribute="bottom" secondItem="dsP-8a-sBa" secondAttribute="bottom" id="SGI-wg-FoA"/>
+                                    <constraint firstAttribute="trailing" secondItem="dsP-8a-sBa" secondAttribute="trailing" id="mam-ua-ZGl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="MQk-7s-U32" secondAttribute="trailing" id="0pY-kG-DAC"/>
-                            <constraint firstAttribute="bottom" secondItem="MQk-7s-U32" secondAttribute="bottom" id="4Y3-h5-r7N"/>
+                            <constraint firstItem="TY9-3j-pFS" firstAttribute="trailing" secondItem="P1t-Bp-HnL" secondAttribute="trailing" id="6dg-vY-4BB"/>
+                            <constraint firstItem="TY9-3j-pFS" firstAttribute="top" secondItem="MQk-7s-U32" secondAttribute="bottom" id="7PP-M2-pXt"/>
                             <constraint firstItem="MQk-7s-U32" firstAttribute="leading" secondItem="P2O-c0-4MW" secondAttribute="leading" id="7RJ-hN-yea"/>
+                            <constraint firstItem="TY9-3j-pFS" firstAttribute="leading" secondItem="P1t-Bp-HnL" secondAttribute="leading" id="9xe-lI-0kR"/>
                             <constraint firstItem="MQk-7s-U32" firstAttribute="top" secondItem="P2O-c0-4MW" secondAttribute="top" id="okJ-6d-FCh"/>
+                            <constraint firstItem="TY9-3j-pFS" firstAttribute="bottom" secondItem="P1t-Bp-HnL" secondAttribute="bottom" id="pW1-gO-mIt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P1t-Bp-HnL"/>
                     </view>
                     <connections>
-                        <outlet property="recentNewsTableViewCell" destination="MQk-7s-U32" id="06G-Iy-eet"/>
+                        <outlet property="recentNewsTableView" destination="MQk-7s-U32" id="Jbf-8S-uFK"/>
+                        <outlet property="showNextPageButton" destination="dsP-8a-sBa" id="H33-Dc-F4S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idu-cb-m1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,7 +272,7 @@
                     <viewLayoutGuide key="safeArea" id="b8L-tH-kSW"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="953" y="286"/>
+            <point key="canvasLocation" x="952.79999999999995" y="285.15742128935534"/>
         </scene>
     </scenes>
 </document>

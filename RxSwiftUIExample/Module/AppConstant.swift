@@ -32,5 +32,7 @@ struct AppConstant {
     // Toastの設定
     static let TOAST_TINT_COLOR: UIColor = .white
     static let TOAST_FONT_SIZE: CGFloat = 12.0
-}
 
+    // New York TimesのAPIKEY (ここは各自取得したものをお使い下さい)
+    static let NEWYORKTIMES_API_KEY = "0d3a37b2678f40daa3243509b4ed4d13"
+}

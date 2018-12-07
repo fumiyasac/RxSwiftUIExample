@@ -8,6 +8,11 @@ target 'RxSwiftUIExample' do
   # Reactive Framework
   pod 'RxSwift'
   pod 'RxCocoa'
+
+  # Utility
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
+
   # UI
   pod 'Floaty'
   pod 'DeckTransition', '~> 2.0'

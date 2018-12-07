@@ -23,6 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
+                    <view alpha="0.35999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dtu-Vu-dUN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Topic Category." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCg-Jn-pKJ">
                         <rect key="frame" x="16" y="123" width="288" height="17"/>
                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
@@ -32,13 +36,17 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Dtu-Vu-dUN" secondAttribute="trailing" id="5xF-CF-k9R"/>
                 <constraint firstAttribute="bottom" secondItem="gCg-Jn-pKJ" secondAttribute="bottom" constant="20" id="Cii-KR-lJm"/>
+                <constraint firstAttribute="bottom" secondItem="Dtu-Vu-dUN" secondAttribute="bottom" id="GJK-gE-Qrh"/>
                 <constraint firstItem="Zfn-qh-l5B" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aAj-wh-vvo"/>
                 <constraint firstAttribute="bottom" secondItem="Zfn-qh-l5B" secondAttribute="bottom" id="f79-dv-OlS"/>
                 <constraint firstAttribute="trailing" secondItem="Zfn-qh-l5B" secondAttribute="trailing" id="hj1-xu-44H"/>
                 <constraint firstItem="gCg-Jn-pKJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="jcr-Kn-P0A"/>
                 <constraint firstAttribute="trailing" secondItem="gCg-Jn-pKJ" secondAttribute="trailing" constant="16" id="nh5-SB-JwL"/>
                 <constraint firstItem="Zfn-qh-l5B" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ufi-GM-hVU"/>
+                <constraint firstItem="Dtu-Vu-dUN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yEs-El-rrc"/>
+                <constraint firstItem="Dtu-Vu-dUN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zyr-T2-pWt"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>

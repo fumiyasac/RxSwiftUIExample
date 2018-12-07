@@ -18,6 +18,8 @@ class NewsWebPageViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
 
+    private var newsUrlString: String!
+
     @IBOutlet weak private var closeButton: UIButton!
     @IBOutlet weak private var headerBackgroundView: UIView!
 
@@ -40,6 +42,10 @@ class NewsWebPageViewController: UIViewController {
     }
 
     // MARK: - Function
+
+    func setSelectedNewsUrlString(targetNewsUrlString: String) {
+        newsUrlString = targetNewsUrlString
+    }
 
     // MARK: - Private Function
 
@@ -68,8 +74,7 @@ class NewsWebPageViewController: UIViewController {
             webView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         }
 
-        // TODO: 後で正しい形に直す
-        if let url = URL(string: "https://www.yahoo.co.jp/") {
+        if let url = URL(string: newsUrlString) {
             let urlRequest = URLRequest(url: url)
             webView.load(urlRequest)
         }

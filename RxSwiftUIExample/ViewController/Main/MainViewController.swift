@@ -20,7 +20,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var floatyMenuButton: Floaty!
     @IBOutlet weak private var addNewsButton: UIButton!
-    
+    @IBOutlet weak private var recentNewsContainerHeight: NSLayoutConstraint!
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ConnectRecentNewsContainer" {
+            let vc = segue.destination as! RecentNewsViewController
+            vc.delegate = self
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -92,5 +100,15 @@ class MainViewController: UIViewController {
         item.iconImageView.tintColor = .white
         item.iconImageView.frame = CGRect(origin: itemOrigin, size: itemSize)
         item.iconImageView.image = UIImage.fontAwesomeIcon(name: type.getFontAwesomeIcon(), style: .solid, textColor: .white, size: itemSize)
+    }
+}
+
+// MARK: - RecentNewsViewController
+
+extension MainViewController: RecentNewsViewControllerDelegate {
+
+    // このViewControllerを表示するためのContainerViewの高さを更新する
+    func updateContainerViewHeight(_ height: CGFloat) {
+        recentNewsContainerHeight.constant = height
     }
 }

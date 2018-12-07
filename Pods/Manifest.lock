@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.0)
   - AnimatedCollectionViewLayout (0.4.0)
   - BTNavigationDropdownMenu (0.5)
   - DeckTransition (2.1.0)
@@ -9,9 +10,11 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
+  - SwiftyJSON (4.2.0)
   - Toast-Swift (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - AnimatedCollectionViewLayout
   - BTNavigationDropdownMenu
   - DeckTransition (~> 2.0)
@@ -19,10 +22,12 @@ DEPENDENCIES:
   - FontAwesome.swift
   - RxCocoa
   - RxSwift
+  - SwiftyJSON
   - Toast-Swift (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - AnimatedCollectionViewLayout
     - BTNavigationDropdownMenu
     - DeckTransition
@@ -31,9 +36,11 @@ SPEC REPOS:
     - RxAtomic
     - RxCocoa
     - RxSwift
+    - SwiftyJSON
     - Toast-Swift
 
 SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AnimatedCollectionViewLayout: f0295119f94d8492fc6ac39e2ced64a471b12699
   BTNavigationDropdownMenu: ba3a26fdb6a56c4721c31df8a0875106c259663a
   DeckTransition: ca707456e3d83928c895fed6f458cbf68c5cac84
@@ -42,8 +49,9 @@ SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
 
-PODFILE CHECKSUM: 4d6bf70ed6dae8fba428b238068808b5ae5eab54
+PODFILE CHECKSUM: 898672a6763cece47b397f784ba36a39a2ab9092
 
 COCOAPODS: 1.5.3

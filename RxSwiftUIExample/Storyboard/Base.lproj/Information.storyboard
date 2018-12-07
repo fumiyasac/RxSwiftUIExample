@@ -21,7 +21,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKf-2k-fGX">
                                 <rect key="frame" x="0.0" y="20" width="375" height="1220"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="Hbs-6X-5gM">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hbs-6X-5gM">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="240" id="dnf-hH-qEw"/>
@@ -343,7 +343,6 @@ Cg
         </scene>
     </scenes>
     <resources>
-        <image name="sample" width="640" height="425"/>
         <image name="ui_recipt_book" width="146" height="206"/>
     </resources>
 </document>

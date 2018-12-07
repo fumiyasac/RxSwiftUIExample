@@ -25,10 +25,18 @@ class RecentNewsTableViewCell: UITableViewCell {
         setupRecentNewsTableViewCell()
     }
 
+    // MARK: - Function
+    
+    func setCell(_ model: RecentNewsModel)  {
+        titleLabel.text  = model.newsTitle
+        byLineLabel.text = model.newsByLine
+        dateLabel.text   = model.newsDate
+    }
+
     // MARK: - Private Function
 
     private func setupRecentNewsTableViewCell() {
-        self.accessoryType = .none
+        self.accessoryType  = .none
         self.selectionStyle = .none
         iconImageView.image = UIImage.fontAwesomeIcon(name: .image, style: .solid, textColor: .gray, size: CGSize(width: 36.0, height: 36.0))
     }
