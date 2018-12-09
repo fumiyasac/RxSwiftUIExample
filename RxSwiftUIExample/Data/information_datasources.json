@@ -2,25 +2,25 @@
     {
         "id": 1,
         "title": "Topic title 1 of 4",
-        "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself.",
+        "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself. This sample was written by fumiyasac(Fumiya Sakai). This sample is published by my Github repository, so you find bugs or want to refactor this codes, you can send pull request or issues. I am pleased that this code will help you.",
         "image_name": "information1"
     },
     {
         "id": 2,
         "title": "Topic title 2 of 4",
-        "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself.",
+        "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself. This sample was written by fumiyasac(Fumiya Sakai). This sample is published by my Github repository, so you find bugs or want to refactor this codes, you can send pull request or issues. I am pleased that this code will help you.",
         "image_name": "information2"
     },
     {
         "id": 3,
         "title": "Topic title 3 of 4",
-        "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself.",
+        "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself. This sample was written by fumiyasac(Fumiya Sakai). This sample is published by my Github repository, so you find bugs or want to refactor this codes, you can send pull request or issues. I am pleased that this code will help you.",
         "image_name": "information3"
     },
     {
         "id": 4,
         "title": "Topic title 4 of 4",
-        "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself.",
+        "summary": "For the news used in this sample, I use the API provided by the New York Times. It will be appreciated if you can acknowledge it beforehand because it will be actual on the contents being distributed. In order to move this sample, please obtain the API key for accessing the corresponding API by yourself. This sample was written by fumiyasac(Fumiya Sakai). This sample is published by my Github repository, so you find bugs or want to refactor this codes, you can send pull request or issues. I am pleased that this code will help you.",
         "image_name": "information4"
     }
 ]
