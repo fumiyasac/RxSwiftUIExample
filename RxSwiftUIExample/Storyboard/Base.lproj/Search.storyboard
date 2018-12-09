@@ -23,85 +23,25 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4PM-KY-srj">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Lum-nV-cJa" customClass="KeywordSearchBar" customModule="RxSwiftUIExample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8j-Pu-WCC">
-                                        <rect key="frame" x="263" y="14" width="56" height="28"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-d3-iG6">
-                                                <rect key="frame" x="0.0" y="0.0" width="56" height="28"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="WHW-d3-iG6" firstAttribute="top" secondItem="N8j-Pu-WCC" secondAttribute="top" id="20T-8w-hpl"/>
-                                            <constraint firstAttribute="bottom" secondItem="WHW-d3-iG6" secondAttribute="bottom" id="J0Q-HL-7Tx"/>
-                                            <constraint firstItem="WHW-d3-iG6" firstAttribute="leading" secondItem="N8j-Pu-WCC" secondAttribute="leading" id="PLV-92-a4v"/>
-                                            <constraint firstAttribute="height" constant="28" id="u8D-qi-sRd"/>
-                                            <constraint firstAttribute="trailing" secondItem="WHW-d3-iG6" secondAttribute="trailing" id="vq7-mY-RAB"/>
-                                            <constraint firstAttribute="width" constant="56" id="ybO-Ve-pYx"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4K-CL-1gg">
-                                        <rect key="frame" x="215" y="10" width="36" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="1DR-Na-yKm"/>
-                                            <constraint firstAttribute="width" constant="36" id="y2w-OM-6fH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                        <state key="normal" title="◀︎">
-                                            <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvc-4c-Ebd">
-                                        <rect key="frame" x="331" y="10" width="36" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="26q-3a-cad"/>
-                                            <constraint firstAttribute="width" constant="36" id="zEs-gD-aEb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                        <state key="normal" title="▶︎">
-                                            <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select target page." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ln-G8-Hcs">
-                                        <rect key="frame" x="8" y="20" width="191" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="N8j-Pu-WCC" firstAttribute="leading" secondItem="v4K-CL-1gg" secondAttribute="trailing" constant="12" id="1wr-qx-gs0"/>
-                                    <constraint firstItem="1ln-G8-Hcs" firstAttribute="leading" secondItem="4PM-KY-srj" secondAttribute="leading" constant="8" id="5FI-ox-0Dp"/>
-                                    <constraint firstItem="Zvc-4c-Ebd" firstAttribute="leading" secondItem="N8j-Pu-WCC" secondAttribute="trailing" constant="12" id="C1X-Ml-bNH"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zvc-4c-Ebd" secondAttribute="trailing" constant="8" id="EFD-YX-uAs"/>
-                                    <constraint firstItem="v4K-CL-1gg" firstAttribute="centerY" secondItem="4PM-KY-srj" secondAttribute="centerY" id="L6Q-QW-hai"/>
-                                    <constraint firstItem="1ln-G8-Hcs" firstAttribute="centerY" secondItem="4PM-KY-srj" secondAttribute="centerY" id="QK8-jP-qjn"/>
-                                    <constraint firstItem="N8j-Pu-WCC" firstAttribute="centerY" secondItem="4PM-KY-srj" secondAttribute="centerY" id="SWV-Kj-DmM"/>
-                                    <constraint firstItem="Zvc-4c-Ebd" firstAttribute="centerY" secondItem="4PM-KY-srj" secondAttribute="centerY" id="r8p-Nf-PKy"/>
-                                    <constraint firstItem="v4K-CL-1gg" firstAttribute="leading" secondItem="1ln-G8-Hcs" secondAttribute="trailing" constant="16" id="uOx-1l-2R9"/>
-                                    <constraint firstAttribute="height" constant="56" id="uob-1L-9Gj"/>
-                                </constraints>
-                            </view>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Lum-nV-cJa" firstAttribute="leading" secondItem="5CQ-3a-tKe" secondAttribute="leading" id="0tt-Kn-pJw"/>
                             <constraint firstItem="udv-do-0eX" firstAttribute="bottom" secondItem="5CQ-3a-tKe" secondAttribute="bottom" id="3Wb-ka-CMX"/>
+                            <constraint firstItem="udv-do-0eX" firstAttribute="top" secondItem="Lum-nV-cJa" secondAttribute="bottom" id="4A8-JZ-JCh"/>
                             <constraint firstItem="udv-do-0eX" firstAttribute="trailing" secondItem="5CQ-3a-tKe" secondAttribute="trailing" id="53K-51-nHS"/>
                             <constraint firstItem="udv-do-0eX" firstAttribute="leading" secondItem="5CQ-3a-tKe" secondAttribute="leading" id="AgQ-sa-4PS"/>
-                            <constraint firstItem="4PM-KY-srj" firstAttribute="leading" secondItem="5CQ-3a-tKe" secondAttribute="leading" id="PSG-gE-ry4"/>
-                            <constraint firstItem="4PM-KY-srj" firstAttribute="top" secondItem="5CQ-3a-tKe" secondAttribute="top" id="gqb-PE-nxC"/>
-                            <constraint firstItem="udv-do-0eX" firstAttribute="top" secondItem="4PM-KY-srj" secondAttribute="bottom" id="psV-hB-EAz"/>
-                            <constraint firstItem="4PM-KY-srj" firstAttribute="trailing" secondItem="5CQ-3a-tKe" secondAttribute="trailing" id="tUl-L8-gsM"/>
+                            <constraint firstItem="Lum-nV-cJa" firstAttribute="trailing" secondItem="5CQ-3a-tKe" secondAttribute="trailing" id="LfA-Wb-vAw"/>
+                            <constraint firstItem="Lum-nV-cJa" firstAttribute="top" secondItem="5CQ-3a-tKe" secondAttribute="top" id="QDo-Qr-Lw6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5CQ-3a-tKe"/>
                     </view>
                     <connections>
+                        <outlet property="keywordSearchBar" destination="Lum-nV-cJa" id="px4-9y-qel"/>
                         <outlet property="searchTableView" destination="udv-do-0eX" id="m2L-hi-wtG"/>
                     </connections>
                 </viewController>

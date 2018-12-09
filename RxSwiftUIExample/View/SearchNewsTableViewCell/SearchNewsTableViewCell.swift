@@ -19,6 +19,13 @@ class SearchNewsTableViewCell: UITableViewCell {
         setupSearchNewsTableViewCell()
     }
 
+    // MARK: - Function
+
+    func setCell(_ model: SearchNewsModel)  {
+        titleLabel.text  = model.newsTitle
+        digestLabel.text = model.newsSnippet
+    }
+
     // MARK: - Private Function
 
     private func setupSearchNewsTableViewCell() {

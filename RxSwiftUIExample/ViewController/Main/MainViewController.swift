@@ -19,14 +19,12 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var floatyMenuButton: Floaty!
-    @IBOutlet weak private var addNewsButton: UIButton!
-    @IBOutlet weak private var recentNewsContainerHeight: NSLayoutConstraint!
+    @IBOutlet weak private var recentNewsContainerViewHeightConstraint: NSLayoutConstraint!
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ConnectRecentNewsContainer" {
-            let vc = segue.destination as! RecentNewsViewController
-            vc.delegate = self
-        }
+
+        // ContainerViewで表示しているViewControllerのプロトコルを適合する
+        applyRecentNewsViewControllerDelegate(targetSegue: segue)
     }
 
     override func viewDidLoad() {
@@ -101,6 +99,15 @@ class MainViewController: UIViewController {
         item.iconImageView.frame = CGRect(origin: itemOrigin, size: itemSize)
         item.iconImageView.image = UIImage.fontAwesomeIcon(name: type.getFontAwesomeIcon(), style: .solid, textColor: .white, size: itemSize)
     }
+
+    private func applyRecentNewsViewControllerDelegate(targetSegue: UIStoryboardSegue) {
+
+        // Storyboardの名前からViewControllerのインスタンスを取得してprotocolを適用する
+        if targetSegue.identifier == "ConnectRecentNewsContainer" {
+            let vc = targetSegue.destination as! RecentNewsViewController
+            vc.delegate = self
+        }
+    }
 }
 
 // MARK: - RecentNewsViewController
@@ -109,6 +116,6 @@ extension MainViewController: RecentNewsViewControllerDelegate {
 
     // このViewControllerを表示するためのContainerViewの高さを更新する
     func updateContainerViewHeight(_ height: CGFloat) {
-        recentNewsContainerHeight.constant = height
+        recentNewsContainerViewHeightConstraint.constant = height
     }
 }

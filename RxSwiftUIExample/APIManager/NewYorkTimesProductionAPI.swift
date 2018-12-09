@@ -28,7 +28,7 @@ class NewYorkTimesProductionAPI: NewYorkTimesAPI {
         let parameters: [String : Any] = [
             "api-key" : key,
             "sort"    : "newest",
-            "id"      : "web_url,pub_date,headline,byline",
+            "fl"      : "web_url,pub_date,headline,byline",
             "page"    : page
         ]
 
@@ -52,8 +52,36 @@ class NewYorkTimesProductionAPI: NewYorkTimesAPI {
         })
     }
 
-    // キーワードとページネーションを元にNewYorkTimesの検索結果に紐づくニュース一覧を取得する
-    //func getSearchNewsList(keyword: String, page: Int = 0) -> Single<JSON> {}
+    // キーワードを元にNewYorkTimesの検索結果に紐づくニュース一覧を取得する
+    func getSearchNewsList(keyword: String) -> Single<JSON> {
+
+        // APIにリクエストする際に必要なパラメーターを定義する
+        let parameters: [String : Any] = [
+            "api-key" : key,
+            "sort"    : "newest",
+            "fl"      : "web_url,snippet,headline",
+            "q"       : keyword,
+        ]
+
+        // APIへのリクエストを1度だけ送信して結果に応じた処理をする
+        return Single<JSON>.create(subscribe: { singleEvent in
+            self.manager.request(self.baseUrl, method: .get, parameters: parameters).validate().responseJSON { response in
+                switch response.result {
+
+                // APIからのレスポンスの取得成功時
+                case .success(let response):
+                    let res = JSON(response)
+                    let json = res["response"]["docs"]
+                    singleEvent(.success(json))
+
+                // APIからのレスポンスの取得失敗時
+                case .failure(let error):
+                    singleEvent(.error(error))
+                }
+            }
+            return Disposables.create()
+        })
+    }
 }
 
 

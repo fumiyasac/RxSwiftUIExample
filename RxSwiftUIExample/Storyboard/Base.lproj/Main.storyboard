@@ -121,7 +121,7 @@
                     <connections>
                         <outlet property="floatyMenuButton" destination="9Uo-Li-Fe0" id="oM3-s6-rGT"/>
                         <outlet property="mainScrollView" destination="LHz-pt-1ob" id="WKZ-cr-uGH"/>
-                        <outlet property="recentNewsContainerHeight" destination="xcj-3R-PfG" id="XIb-ho-QAd"/>
+                        <outlet property="recentNewsContainerViewHeightConstraint" destination="xcj-3R-PfG" id="bhT-zW-6SQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

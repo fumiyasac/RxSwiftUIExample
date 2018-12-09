@@ -7,18 +7,62 @@
 //
 
 import UIKit
+import DeckTransition
+
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
 
-    private var keywordSearchBar: KeywordSearchBar!
-    private var tapGestureRecognizer : UITapGestureRecognizer!
+    private let disposeBag = DisposeBag()
 
-    @IBOutlet weak var searchTableView: UITableView!
-    
+    private var tapGestureRecognizer: UITapGestureRecognizer!
+
+    @IBOutlet weak private var keywordSearchBar: KeywordSearchBar!
+    @IBOutlet weak private var searchTableView: UITableView!
+
+    // 検索ボックスの値変化を監視対象にする（テキストが空っぽの場合はデータ取得を行わない）
+    private var searchBarText: Observable<String> {
+
+        // MEMO: 0.5秒のバッファを持たせる
+        return keywordSearchBar.rx.text
+            .filter { $0 != nil }
+            .map { $0! }
+            .filter { $0.count >= 3 }
+            .debounce(0.5, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // UIまわりの初期設定
         setupUserInterface()
+
+        //
+        let searchNewsViewModel = SearchNewsViewModel(api: NewYorkTimesProductionAPI())
+
+        // RxSwiftでのUICollectionViewDelegateの宣言
+        searchTableView.rx.setDelegate(self).disposed(by: disposeBag)
+
+        // UITableViewに配置されたセルをタップした場合の処理
+        searchTableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            let searchNews = searchNewsViewModel.searchNewsLists.value[indexPath.row]
+            self?.showNewsWebPage(newsUrlString: searchNews.newsWebUrlString)
+        }).disposed(by: disposeBag)
+
+        // 一覧データをUITableViewにセットする処理
+        searchNewsViewModel.searchNewsLists.asObservable().bind(to: searchTableView.rx.items) { (tableView, row, model) in
+            let cell = tableView.dequeueReusableCustomCell(with: SearchNewsTableViewCell.self)
+            cell.setCell(model)
+            return cell
+        }.disposed(by: disposeBag)
+
+        //
+        searchBarText.subscribe(onNext: {
+            searchNewsViewModel.getSearchNews(keyword: $0)
+        }).disposed(by: disposeBag)
+
     }
 
     // MARK: - Private Function
@@ -42,19 +86,15 @@ class SearchViewController: UIViewController {
         tapGestureRecognizer.delegate = self
 
         //
-        keywordSearchBar = KeywordSearchBar()
         keywordSearchBar.placeholder = "Please input keyword."
         keywordSearchBar.delegate = self
-
-        self.navigationItem.titleView = keywordSearchBar
     }
 
     //
     private func setupSearchTableView() {
-        
-        //searchTableView.delegate = self
-        //searchTableView.dataSource = self
-        searchTableView.rowHeight = 48.0
+
+        // UITableViewの初期設定をする
+        searchTableView.rowHeight = 60.0
         searchTableView.registerCustomCell(SearchNewsTableViewCell.self)
 
         // StatusBarのタップによるスクロールを防止する
@@ -62,6 +102,35 @@ class SearchViewController: UIViewController {
 
         // ボタンのタップとスクロールの競合を防止する
         searchTableView.delaysContentTouches = false
+    }
+
+    // ニュースの詳細をWebviewで表示する処理
+    private func showNewsWebPage(newsUrlString: String) {
+        let sb = UIStoryboard(name: "NewsWebPage", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! NewsWebPageViewController
+        let delegate = DeckTransitioningDelegate()
+        vc.setSelectedNewsUrlString(targetNewsUrlString: newsUrlString)
+        vc.transitioningDelegate = delegate
+        vc.modalPresentationStyle = .custom
+        self.present(vc, animated: true, completion: nil)
+    }
+
+    // エラー時のアラートを表示する処理
+    private func showResponseErrorAlert(result: Bool) {
+        if result {
+            let errorTitle = "Error Occured!"
+            let errorMessage = "New York Times API Response Error. Please try again."
+            showAlertWith(title: errorTitle, message: errorMessage)
+        }
+    }
+
+    private func showAlertWith(title: String, message: String, completionHandler: (() -> ())? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+            completionHandler?()
+        })
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -87,6 +156,7 @@ extension SearchViewController : UIGestureRecognizerDelegate {
 
 // MARK: - UISearchBarDelegate
 
+
 extension SearchViewController: UISearchBarDelegate {
 
     //
@@ -108,16 +178,8 @@ extension SearchViewController: UISearchBarDelegate {
     }
 
     //
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
-        //
-        if let query = searchBar.text {
-            print("検索文字列:", query)
-        }
-    }
-
-    //
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
 }
+
