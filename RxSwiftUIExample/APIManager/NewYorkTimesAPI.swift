@@ -14,4 +14,5 @@ import RxCocoa
 
 protocol NewYorkTimesAPI {
     func getRecentNewsList(page: Int) -> Single<JSON>
+    //func getSearchNewsList(keyword: String, page: Int) -> Single<JSON>
 }

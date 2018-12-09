@@ -44,7 +44,6 @@ class RecentNewsViewModel {
             onSuccess: { json in
                 let targetNewsList = self.getRecentNewsModelListsBy(json: json)
                 self.executeSuccessResponseAction(newList: targetNewsList)
-                print("Success:", targetNewsList)
             },
 
             // JSON取得が失敗した場合の処理

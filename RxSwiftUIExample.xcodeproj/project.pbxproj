@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC4D018F07571565405C049B /* Pods_RxSwiftUIExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4D97BD306639C8B22BEC5D /* Pods_RxSwiftUIExample.framework */; };
+		DE118DF121BCE2AA003AFF8A /* SearchNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE118DF021BCE2AA003AFF8A /* SearchNewsModel.swift */; };
 		DE19692D21ADB1FE008D183C /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19692C21ADB1FE008D183C /* AppConstant.swift */; };
 		DE19692F21ADB400008D183C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19692E21ADB400008D183C /* UIViewControllerExtension.swift */; };
 		DE19693121ADBAA4008D183C /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE19693021ADBAA4008D183C /* CustomViewBase.swift */; };
@@ -72,6 +73,7 @@
 		42436920B6730741EAACCE15 /* Pods-RxSwiftUIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftUIExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftUIExample/Pods-RxSwiftUIExample.debug.xcconfig"; sourceTree = "<group>"; };
 		7E4D97BD306639C8B22BEC5D /* Pods_RxSwiftUIExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftUIExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C0A0936A8DBAD9CA43F14C /* Pods-RxSwiftUIExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftUIExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftUIExample/Pods-RxSwiftUIExample.release.xcconfig"; sourceTree = "<group>"; };
+		DE118DF021BCE2AA003AFF8A /* SearchNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsModel.swift; sourceTree = "<group>"; };
 		DE19692C21ADB1FE008D183C /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		DE19692E21ADB400008D183C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DE19693021ADBAA4008D183C /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				DE66F85121B7CB3900A09336 /* FeaturedModel.swift */,
 				DE66F85521B83F5500A09336 /* InformationModel.swift */,
 				DE6C0A7121BAAB8100CC9760 /* RecentNewsModel.swift */,
+				DE118DF021BCE2AA003AFF8A /* SearchNewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				DE2553F421ADA89D00D9A3C7 /* UITableViewExtension.swift in Sources */,
 				DE19694121ADC829008D183C /* SearchNewsTableViewCell.swift in Sources */,
 				DE2553F821ADA97800D9A3C7 /* UICollectionViewExtension.swift in Sources */,
+				DE118DF121BCE2AA003AFF8A /* SearchNewsModel.swift in Sources */,
 				DE6C0A7021BAAAF400CC9760 /* RecentNewsViewModel.swift in Sources */,
 				DEFFDEED21AFFFE700821D39 /* SearchViewController.swift in Sources */,
 				DE2553F221ADA7F600D9A3C7 /* NSObjectProtocolExtension.swift in Sources */,

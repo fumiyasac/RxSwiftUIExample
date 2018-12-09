@@ -115,9 +115,11 @@ class RecentNewsViewController: UIViewController {
 
     // エラー時のアラートを表示する処理
     private func showResponseErrorAlert(result: Bool) {
-        let errorTitle = "Error Occured!"
-        let errorMessage = "New York Times API Response Error. Please try again."
-        showAlertWith(title: errorTitle, message: errorMessage)
+        if result {
+            let errorTitle = "Error Occured!"
+            let errorMessage = "New York Times API Response Error. Please try again."
+            showAlertWith(title: errorTitle, message: errorMessage)
+        }
     }
 
     private func showAlertWith(title: String, message: String, completionHandler: (() -> ())? = nil) {

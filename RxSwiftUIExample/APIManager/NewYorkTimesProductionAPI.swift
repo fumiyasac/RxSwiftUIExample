@@ -51,6 +51,9 @@ class NewYorkTimesProductionAPI: NewYorkTimesAPI {
             return Disposables.create()
         })
     }
+
+    // キーワードとページネーションを元にNewYorkTimesの検索結果に紐づくニュース一覧を取得する
+    //func getSearchNewsList(keyword: String, page: Int = 0) -> Single<JSON> {}
 }
 
 
