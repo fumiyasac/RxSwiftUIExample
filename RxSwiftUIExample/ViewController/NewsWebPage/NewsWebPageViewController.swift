@@ -38,6 +38,7 @@ class NewsWebPageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        // Toast表示を実行する
         showToastForAnnounce()
     }
 
@@ -81,6 +82,7 @@ class NewsWebPageViewController: UIViewController {
         }
     }
 
+    // Toast表示に関する初期設定をする
     private func showToastForAnnounce() {
 
         let centerX: CGFloat = UIScreen.main.bounds.width / 2
