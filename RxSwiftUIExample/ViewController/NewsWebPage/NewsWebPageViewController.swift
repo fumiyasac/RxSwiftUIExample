@@ -82,17 +82,16 @@ class NewsWebPageViewController: UIViewController {
 
     private func showToastForAnnounce() {
 
-        // TODO: 後で正しい形に直す
         let centerX: CGFloat = UIScreen.main.bounds.width / 2
         let centerY: CGFloat = 96.0
         let toastShowPoint = CGPoint(x: centerX, y: centerY)
 
         var style = ToastStyle()
-        style.messageFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.TOAST_FONT_SIZE)!
+        style.titleFont = UIFont(name: AppConstant.COMMON_FONT_BOLD, size: AppConstant.TOAST_FONT_TITLE_SIZE)!
+        style.messageFont = UIFont(name: AppConstant.COMMON_FONT_NORMAL, size: AppConstant.TOAST_FONT_MESSAGE_SIZE)!
         style.messageColor = AppConstant.TOAST_TINT_COLOR
-        style.messageAlignment = .center
         style.backgroundColor = UIColor(code: "#333333", alpha: 0.5)
 
-        self.view.makeToast("This is Toast Example!", duration: 1.6, point: toastShowPoint, title: nil, image: nil, completion: nil)
+        self.view.makeToast("This is Webview which displays target articles of 'New York Times.'", duration: 1.0, point: toastShowPoint, title: "Thanks for watching my sample!", image: nil, completion: nil)
     }
 }

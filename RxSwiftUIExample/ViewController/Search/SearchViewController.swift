@@ -17,14 +17,14 @@ class SearchViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     private var tapGestureRecognizer: UITapGestureRecognizer!
+    private var keywordSearchBar: KeywordSearchBar!
 
-    @IBOutlet weak private var keywordSearchBar: KeywordSearchBar!
     @IBOutlet weak private var searchTableView: UITableView!
 
     // 検索ボックスの値変化を監視対象にする（テキストが空っぽの場合はデータ取得を行わない）
     private var searchBarText: Observable<String> {
 
-        // MEMO: 0.5秒のバッファを持たせる
+        // MEMO: 3文字未満のキーワードの場合は受け付けない & APIリクエストの際に0.5秒のバッファを持たせる
         return keywordSearchBar.rx.text
             .filter { $0 != nil }
             .map { $0! }
@@ -39,7 +39,7 @@ class SearchViewController: UIViewController {
         // UIまわりの初期設定
         setupUserInterface()
 
-        //
+        // ViewModelの初期化
         let searchNewsViewModel = SearchNewsViewModel(api: NewYorkTimesProductionAPI())
 
         // RxSwiftでのUICollectionViewDelegateの宣言
@@ -58,11 +58,20 @@ class SearchViewController: UIViewController {
             return cell
         }.disposed(by: disposeBag)
 
-        //
+        // 読み込み状態が更新された場合の処理
+        searchNewsViewModel.isLoading.asDriver().drive(onNext: { [weak self] in
+            self?.searchTableView.isUserInteractionEnabled = !$0
+        }).disposed(by: disposeBag)
+        
+        // エラー状態が更新された場合の処理
+        searchNewsViewModel.isError.asDriver().drive(onNext: { [weak self] in
+            self?.showResponseErrorAlert(result: $0)
+        }).disposed(by: disposeBag)
+
+        // 検索すべき入力テキストが決定された際に実行する
         searchBarText.subscribe(onNext: {
             searchNewsViewModel.getSearchNews(keyword: $0)
         }).disposed(by: disposeBag)
-
     }
 
     // MARK: - Private Function
@@ -73,24 +82,25 @@ class SearchViewController: UIViewController {
     }
 
     private func setupUserInterface() {
-        setupNavigationBar(title: "Search News")
+        setupNavigationBar(title: "")
         setupKeywordSearchBar()
         setupSearchTableView()
     }
 
-    //
     private func setupKeywordSearchBar() {
 
-        //
+        // キーボード表示時にUITableViewのタップ処理をさせないためにUITapGestureRecognizerを作成する
         tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(searchBarUnforcus))
         tapGestureRecognizer.delegate = self
 
-        //
+        // NavigationBarに設置するSearchBarを作成する
+        keywordSearchBar = KeywordSearchBar()
         keywordSearchBar.placeholder = "Please input keyword."
         keywordSearchBar.delegate = self
+
+        self.navigationItem.titleView = keywordSearchBar
     }
 
-    //
     private func setupSearchTableView() {
 
         // UITableViewの初期設定をする
@@ -138,7 +148,7 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UIScrollViewDelegate {
 
-    //
+    // UITableViewのスクロール処理を実行した場合にはSearchBarのフォーカスを外す
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBarUnforcus()
     }
@@ -148,7 +158,7 @@ extension SearchViewController: UIScrollViewDelegate {
 
 extension SearchViewController : UIGestureRecognizerDelegate {
 
-    //
+    // キーボード表示時にUITableViewのタップ処理をさせないためにUITapGestureRecognizerを有効にする
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return true
     }
@@ -159,25 +169,21 @@ extension SearchViewController : UIGestureRecognizerDelegate {
 
 extension SearchViewController: UISearchBarDelegate {
 
-    //
+    // SearchBarでの入力を開始した場合は、キャンセルボタンをセットしてUITapGestureRecognizerを付与する
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-
-        //
         searchBar.setShowsCancelButton(true, animated: true)
         self.view.addGestureRecognizer(tapGestureRecognizer)
         return true
     }
 
-    //
+    // SearchBarでの入力を終了した場合は、キャンセルボタンをキャンセルしてUITapGestureRecognizerを削除する
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-
-        //
         searchBar.setShowsCancelButton(false, animated: true)
         self.view.removeGestureRecognizer(tapGestureRecognizer)
         return true
     }
 
-    //
+    // キャンセルボタンをタップした場合は、キーボードを隠す
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
