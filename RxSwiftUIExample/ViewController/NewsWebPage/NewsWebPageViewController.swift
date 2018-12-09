@@ -74,6 +74,7 @@ class NewsWebPageViewController: UIViewController {
             webView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         }
 
+        // 取得したURLページを表示する
         if let url = URL(string: newsUrlString) {
             let urlRequest = URLRequest(url: url)
             webView.load(urlRequest)
