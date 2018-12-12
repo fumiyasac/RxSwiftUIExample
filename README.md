@@ -98,27 +98,21 @@ __(2) フリーワードに該当する記事をインクリメンタルサー�
 
 (1) Rx関連処理を行うために必要なもの
 
-| ライブラリ名 | ライブラリの機能概要 |
-|:-----------|:------------|:------------|
-|[RxSwift & RxCocoa](https://github.com/ReactiveX/RxSwift) |FRP (Functional Reactive Programming)を実現するためのライブラリ |
++ [RxSwift & RxCocoa](https://github.com/ReactiveX/RxSwift)
 
 (2) APIへの非同期通信とJSONの解析を行うために必要なもの
 
-| ライブラリ名 | ライブラリの機能概要 |
-|:-----------|:------------|:------------|
-|[SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) |JSONデータの解析用ライブラリ |
-|[Alamofire](https://github.com/Alamofire/Alamofire) |HTTPないしはHTTPSのネットワーク通信用のライブラリ |
++ [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
++ [Alamofire](https://github.com/Alamofire/Alamofire)
 
 (3) UI表現をするために必要なもの
 
-| ライブラリ名 | ライブラリの機能概要 |
-|:-----------|:------------|:------------|
-|[Floaty](https://github.com/kciter/Floaty) |Androidの様なフローティングメニューを実現するためのUIライブラリ |
-|[DeckTransition](https://github.com/HarshilShah/DeckTransition) |Apple Musicの様なハーフモーダル表示を実現するためのUIライブラリ |
-|[AnimatedCollectionViewLayout](https://github.com/KelvinJin/AnimatedCollectionViewLayout) |UICollectionViewを動かす際に様々な動きをつけるためのUIライブラリ |
-|[FontAwesome.swift](https://github.com/thii/FontAwesome.swift) |「Font Awesome」アイコンを利用するためのライブラリ |
-|[BTNavigationDropdownMenu](https://github.com/PhamBaTho/BTNavigationDropdownMenu) |UINavigationBarにドロップダウンメニューを表示するためのUIライブラリ |
-|[Toast-Swift](https://github.com/scalessec/Toast-Swift) |Androidの様なToast型のポップアップ表示をするためのUIライブラリ |
++ [Floaty](https://github.com/kciter/Floaty)
++ [DeckTransition](https://github.com/HarshilShah/DeckTransition)
++ [AnimatedCollectionViewLayout](https://github.com/KelvinJin/AnimatedCollectionViewLayout)
++ [FontAwesome.swift](https://github.com/thii/FontAwesome.swift)
++ [BTNavigationDropdownMenu](https://github.com/PhamBaTho/BTNavigationDropdownMenu)
++ [Toast-Swift](https://github.com/scalessec/Toast-Swift)
 
 ### その他
 
