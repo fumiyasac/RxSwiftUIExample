@@ -61,7 +61,6 @@ class SearchNewsViewModel {
 
     private func executeSuccessResponseAction(newList: [SearchNewsModel]) {
         searchNewsLists.accept(newList)
-        //targetPage += 1
         isLoading.accept(false)
     }
 
