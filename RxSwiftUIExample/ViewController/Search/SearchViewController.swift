@@ -31,6 +31,10 @@ class SearchViewController: UIViewController {
             .filter { $0.count >= 3 }
             .debounce(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
+
+        // 疑問: 今回の様な形だとどっちが良いのだろうか...?
+        // .debounce(0.5, scheduler: MainScheduler.instance) vs .throttle(0.5, scheduler: MainScheduler.instance)
+        // https://qiita.com/dekatotoro/items/be22a241335382ecc16e
     }
 
     override func viewDidLoad() {
