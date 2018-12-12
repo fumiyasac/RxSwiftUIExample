@@ -120,7 +120,6 @@
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="floatyMenuButton" destination="9Uo-Li-Fe0" id="oM3-s6-rGT"/>
-                        <outlet property="mainScrollView" destination="LHz-pt-1ob" id="WKZ-cr-uGH"/>
                         <outlet property="recentNewsContainerViewHeightConstraint" destination="xcj-3R-PfG" id="bhT-zW-6SQ"/>
                     </connections>
                 </viewController>

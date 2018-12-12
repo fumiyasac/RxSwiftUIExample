@@ -65,7 +65,7 @@ class RecentNewsViewController: UIViewController {
 
         // 読み込み状態が更新された場合の処理
         recentNewsViewModel.isLoading.asDriver().drive(onNext: { [weak self] in
-            self?.updateshowNextPageButtonStatueBy(result: $0)
+            self?.updateshowNextPageButtonStatusBy(result: $0)
         }).disposed(by: disposeBag)
 
         // エラー状態が更新された場合の処理
@@ -87,14 +87,14 @@ class RecentNewsViewController: UIViewController {
     }
 
     // 読み込みボタンの状態を更新する処理
-    private func updateshowNextPageButtonStatueBy(result: Bool) {
+    private func updateshowNextPageButtonStatusBy(result: Bool) {
         let buttonText = result ? "Now Loading ..." : "↓ More Next 10 News"
         self.showNextPageButton.setTitle(buttonText, for: .normal)
         self.showNextPageButton.isEnabled = !result
         self.showNextPageButton.alpha = result ? 0.3 : 1
     }
 
-    // 親のContainerViewの高さ制約を更新する処理
+    // 親のViewControllerでContainerViewの高さ制約を更新する処理
     private func updateRecentNewsTableViewHeightBy(dataCount: Int) {
         let showNextPageButtonHeight = CGFloat(48.0)
         let allCellsHeight = CGFloat(dataCount) * RecentNewsTableViewCell.cellHeight

@@ -16,8 +16,7 @@ import RxCocoa
 class MainViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
-    
-    @IBOutlet weak private var mainScrollView: UIScrollView!
+
     @IBOutlet weak private var floatyMenuButton: Floaty!
     @IBOutlet weak private var recentNewsContainerViewHeightConstraint: NSLayoutConstraint!
 
@@ -43,8 +42,8 @@ class MainViewController: UIViewController {
 
     private func setupUserInterface() {
         setupNavigationBar(title: "World News Archives")
-        setupFloatyMenuButton()
         removeBackButtonText()
+        setupFloatyMenuButton()
     }
 
     private func setupFloatyMenuButton() {
