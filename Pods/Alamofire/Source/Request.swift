@@ -1,7 +1,7 @@
 //
 //  Request.swift
 //
-//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -497,8 +497,19 @@ open class DownloadRequest: Request {
     // MARK: State
 
     /// Cancels the request.
-    open override func cancel() {
-        downloadDelegate.downloadTask.cancel { self.downloadDelegate.resumeData = $0 }
+    override open func cancel() {
+        cancel(createResumeData: true)
+    }
+
+    /// Cancels the request.
+    ///
+    /// - parameter createResumeData: Determines whether resume data is created via the underlying download task or not.
+    open func cancel(createResumeData: Bool) {
+        if createResumeData {
+            downloadDelegate.downloadTask.cancel { self.downloadDelegate.resumeData = $0 }
+        } else {
+            downloadDelegate.downloadTask.cancel()
+        }
 
         NotificationCenter.default.post(
             name: Notification.Name.Task.DidCancel,

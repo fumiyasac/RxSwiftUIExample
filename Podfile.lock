@@ -1,17 +1,18 @@
 PODS:
-  - Alamofire (4.8.0)
-  - AnimatedCollectionViewLayout (0.4.0)
+  - Alamofire (4.9.1)
+  - AnimatedCollectionViewLayout (1.0.1)
   - BTNavigationDropdownMenu (0.5)
-  - DeckTransition (2.1.0)
-  - Floaty (4.1.0)
-  - FontAwesome.swift (1.4.6)
-  - RxAtomic (4.4.0)
-  - RxCocoa (4.4.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.4.0):
-    - RxAtomic (~> 4.4)
-  - SwiftyJSON (4.2.0)
-  - Toast-Swift (4.0.0)
+  - DeckTransition (2.2.0)
+  - Floaty (4.2.0)
+  - FontAwesome.swift (1.8.2)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SwiftyJSON (5.0.0)
+  - Toast-Swift (4.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -26,32 +27,32 @@ DEPENDENCIES:
   - Toast-Swift (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - AnimatedCollectionViewLayout
     - BTNavigationDropdownMenu
     - DeckTransition
     - Floaty
     - FontAwesome.swift
-    - RxAtomic
     - RxCocoa
+    - RxRelay
     - RxSwift
     - SwiftyJSON
     - Toast-Swift
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  AnimatedCollectionViewLayout: f0295119f94d8492fc6ac39e2ced64a471b12699
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AnimatedCollectionViewLayout: 00f0997fd26f0fd02d8b99765023b95570b5d826
   BTNavigationDropdownMenu: ba3a26fdb6a56c4721c31df8a0875106c259663a
-  DeckTransition: ca707456e3d83928c895fed6f458cbf68c5cac84
-  Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
-  FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
+  DeckTransition: c705e1f6bf8d63a3515a91d8a41be7038005bf35
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+  FontAwesome.swift: 7938d6a03113ff3f39001bde7f50be8a0903d605
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
 PODFILE CHECKSUM: 898672a6763cece47b397f784ba36a39a2ab9092
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

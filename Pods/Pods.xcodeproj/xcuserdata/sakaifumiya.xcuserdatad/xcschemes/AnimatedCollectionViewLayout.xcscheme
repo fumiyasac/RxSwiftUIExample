@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8F800C4F993A92D7241FD55390B94C8"
+               BlueprintIdentifier = "5771B182B07C28E13101CE371C584606"
+               BuildableName = "AnimatedCollectionViewLayout.framework"
                BlueprintName = "AnimatedCollectionViewLayout"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "AnimatedCollectionViewLayout.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
