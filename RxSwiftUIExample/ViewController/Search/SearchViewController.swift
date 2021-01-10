@@ -29,11 +29,11 @@ class SearchViewController: UIViewController {
             .filter { $0 != nil }
             .map { $0! }
             .filter { $0.count >= 3 }
-            .debounce(.microseconds(500), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
 
         // 疑問: 今回の様な形だとどっちが良いのだろうか...?
-        // .debounce(0.5, scheduler: MainScheduler.instance) vs .throttle(0.5, scheduler: MainScheduler.instance)
+        // .debounce(.milliseconds(500), scheduler: MainScheduler.instance) vs .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
         // https://qiita.com/dekatotoro/items/be22a241335382ecc16e
     }
 
