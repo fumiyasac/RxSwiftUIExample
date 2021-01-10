@@ -1,16 +1,16 @@
 PODS:
-  - Alamofire (4.9.1)
-  - AnimatedCollectionViewLayout (1.0.1)
-  - BTNavigationDropdownMenu (0.5)
+  - Alamofire (5.4.1)
+  - AnimatedCollectionViewLayout (1.1.0)
+  - BTNavigationDropdownMenu (0.7)
   - DeckTransition (2.2.0)
   - Floaty (4.2.0)
-  - FontAwesome.swift (1.8.2)
-  - RxCocoa (5.0.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.0.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - FontAwesome.swift (1.9.1)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
   - SwiftyJSON (5.0.0)
   - Toast-Swift (4.0.1)
 
@@ -41,18 +41,18 @@ SPEC REPOS:
     - Toast-Swift
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AnimatedCollectionViewLayout: 00f0997fd26f0fd02d8b99765023b95570b5d826
-  BTNavigationDropdownMenu: ba3a26fdb6a56c4721c31df8a0875106c259663a
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AnimatedCollectionViewLayout: 0c1a38c4be115c525c887be183fc91ef65737c5d
+  BTNavigationDropdownMenu: 57a72c74dc211db3564f5be168f4f7643491a7de
   DeckTransition: c705e1f6bf8d63a3515a91d8a41be7038005bf35
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
-  FontAwesome.swift: 7938d6a03113ff3f39001bde7f50be8a0903d605
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
 PODFILE CHECKSUM: 898672a6763cece47b397f784ba36a39a2ab9092
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0

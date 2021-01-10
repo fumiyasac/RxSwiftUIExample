@@ -78,6 +78,15 @@ class SearchViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
 
+    // MEMO: UISearchBarを継承したクラスをtitleViewへ追加した時はPop遷移で当該画面から戻る際に黒色のスペースが生じるのでこの対応をしています。
+    // https://stackoverflow.com/a/47976999/4652214
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        navigationController?.view.setNeedsLayout()
+        navigationController?.view.layoutIfNeeded()
+    }
+
     // MARK: - Private Function
 
     // スクロールすると検索フォームのフォーカスを外す
@@ -86,6 +95,13 @@ class SearchViewController: UIViewController {
     }
 
     private func setupUserInterface() {
+
+        // MEMO: Viewの表示エリアをUINavigationBarの下まで伸ばす対応をしています。
+        // → この設定がないとUITableViewの表示が一瞬だけガタンとなる感じになります。
+        // 参考:
+        // https://qiita.com/Yaruki00/items/1ca29e9f26578f33c80e
+        self.extendedLayoutIncludesOpaqueBars = true
+
         setupNavigationBar(title: "")
         setupKeywordSearchBar()
         setupSearchTableView()
@@ -94,7 +110,7 @@ class SearchViewController: UIViewController {
     private func setupKeywordSearchBar() {
 
         // キーボード表示時にUITableViewのタップ処理をさせないためにUITapGestureRecognizerを作成する
-        tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(searchBarUnforcus))
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(searchBarUnforcus))
         tapGestureRecognizer.delegate = self
 
         // NavigationBarに設置するSearchBarを作成する
@@ -102,6 +118,7 @@ class SearchViewController: UIViewController {
         keywordSearchBar.placeholder = "Please input keyword."
         keywordSearchBar.delegate = self
 
+        // titleViewプロパティにSearchBarを入れる
         self.navigationItem.titleView = keywordSearchBar
     }
 

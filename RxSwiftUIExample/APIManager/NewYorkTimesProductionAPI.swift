@@ -15,7 +15,7 @@ import RxCocoa
 
 class NewYorkTimesProductionAPI: NewYorkTimesAPI {
 
-    private let manager = Alamofire.SessionManager.default
+    private let manager = AF
     private let baseUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
     private let key = AppConstant.NEWYORKTIMES_API_KEY
 
@@ -45,7 +45,7 @@ class NewYorkTimesProductionAPI: NewYorkTimesAPI {
 
                 // APIからのレスポンスの取得失敗時
                 case .failure(let error):
-                    singleEvent(.error(error))
+                    singleEvent(.failure(error))
                 }
             }
             return Disposables.create()
@@ -76,7 +76,7 @@ class NewYorkTimesProductionAPI: NewYorkTimesAPI {
 
                 // APIからのレスポンスの取得失敗時
                 case .failure(let error):
-                    singleEvent(.error(error))
+                    singleEvent(.failure(error))
                 }
             }
             return Disposables.create()

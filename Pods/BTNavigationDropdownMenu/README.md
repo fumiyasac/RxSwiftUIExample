@@ -1,7 +1,3 @@
-### Support Xcode 10 and Swift 4.2 now.
-
----
-
 ![alt tag](https://github.com/PhamBaTho/BTNavigationDropdownMenu/blob/master/Assets/BTNavigationDropdownLogo.png)
 
 [![Pod Version](https://img.shields.io/cocoapods/v/BTNavigationDropdownMenu.svg?style=flat)](http://cocoadocs.org/docsets/BTNavigationDropdownMenu/)
@@ -9,12 +5,13 @@
 ![Language](https://img.shields.io/badge/language-Swift-brightgreen.svg?style=flat)
 <!--[![Build Status](https://travis-ci.org/PhamBaTho/BTNavigationDropdownMenu.svg?branch=master)](https://travis-ci.org/PhamBaTho/BTNavigationDropdownMenu)-->
 
-## Introduction:
-This elegant **Swift** dropdown menu appears underneath the navigation bar to display a list of related items when a user clicks on the navigation title.
+## Introduction
+The elegant yet functional dropdown menu, written in Swift, appears underneath the navigation bar to display a list of defined items when a user clicks on the navigation title.
 
 ![alt tag](https://github.com/PhamBaTho/BTNavigationDropdownMenu/blob/master/Assets/Demo.gif)
 
-## Installation:
+## Installation
+### CocoaPods
 **BTNavigationDropdownMenu** is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
@@ -26,7 +23,25 @@ Go ahead and **import** BTNavigationDropdownMenu into your own Swift files
 import BTNavigationDropdownMenu
 ```
 
-## Usage:
+## Carthage
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](https://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate BTNavigationDropdownMenu into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "PhamBaTho/BTNavigationDropdownMenu" ~> 0.7
+```
+
+Run `carthage update` to build the framework and drag the built `BTNavigationDropdownMenu.framework` into your Xcode project.
+
+## Usage
 ### Instantiate
 Start by creating an Array that contains strings as **elements of a dropdown list**:
 ```swift
@@ -77,9 +92,9 @@ First, assign the items and frame for the dropdown menu. Then, customize the loo
 
 `cellTextLabelColor` **- Text color inside of the cell** *Default is darkGrayColor()*
 
-`cellTextLabelFont` **- Font inside the cell** *Default is HelveticaNeue-Bold, size 17*
+`cellTextLabelFont` **- Font inside the cell** *Default is bold system font, size 17*
 
-`navigationBarTitleFont` **- Navigation bar title font** *Default is HelveticaNeue-Bold, size 17*
+`navigationBarTitleFont` **- Navigation bar title font** *Default is vold system font, size 17*
 
 `cellTextLabelAlignment` **- Text alignment inside of the cell** *Default is .Left*
 
@@ -108,8 +123,7 @@ First, assign the items and frame for the dropdown menu. Then, customize the loo
 `arrowTintColor`  **- Tint color of the arrow.** *Default is whiteColor()*
 
 ## Requirement
-- iOS 8.0+ (CocoaPods with Swift support will only work on iOS 8.0+. Alternatively, you will have to import library manually to your project)
-- Xcode 8.0+, Swift 3.0+
+- iOS 9.0+
 
 ## Changelog
 See the [CHANGELOG](https://github.com/PhamBaTho/BTNavigationDropdownMenu/blob/master/CHANGELOG.md) for details

@@ -9,24 +9,24 @@
 import Foundation
 import UIKit
 
+// 参考: UISearchBarを継承したクラスを別途作成しNavigationBarのtitleViewに当てはめる対応をしています。
+// https://stackoverflow.com/a/46945190
+// 補足: iOS14ではこの部分が原因でAutoLayoutの警告が発生していたので下記メソッドは削除しています。
+/*
+private func setupKeywordSearchBar() {
+
+    // iOS11以降の場合だけLayoutAnchorを利用して制約を付与する
+    if #available(iOS 11.0, *) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(equalToConstant: searchBarHeight).isActive = true
+    }
+}
+*/
+
 class KeywordSearchBar: UISearchBar {
 
     private let searchBarHeight: CGFloat = 44.0
     private let searchBarPaddingTop: CGFloat = 8.0
-
-    // MARK: - Initializer
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupKeywordSearchBar()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        setupKeywordSearchBar()
-    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -57,15 +57,6 @@ class KeywordSearchBar: UISearchBar {
                 label.textColor = AppConstant.SEARCHBAR_PLACEHOLDER_TINT_COLOR
                 label.font = UIFont(name: AppConstant.COMMON_FONT_NORMAL, size: AppConstant.SEARCHBAR_PLACEHOLDER_FONT_SIZE)
             }
-        }
-    }
-
-    private func setupKeywordSearchBar() {
-
-        // iOS11以降の場合だけLayoutAnchorを利用して制約を付与する
-        if #available(iOS 11.0, *) {
-            self.translatesAutoresizingMaskIntoConstraints = false
-            self.heightAnchor.constraint(equalToConstant: searchBarHeight).isActive = true
         }
     }
 }
